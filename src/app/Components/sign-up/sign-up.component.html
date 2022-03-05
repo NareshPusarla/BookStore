@@ -1,0 +1,40 @@
+ <div class="main">
+  <div class="logo">
+    <img src="../../../assets/shopping.png" alt="" style="width: 350px;">
+  </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div fxLayout.xs="column" fxLayoutAlign.xs="center center" class="switch">
+        <button (click)="go()">Login</button>
+        <button>SignUp</button>
+        
+      </div>
+      <hr id="indicator">
+      <div  class="user-name"> 
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput placeholder="Full Name" formControlName="fullName">
+          <mat-error>Enter first name</mat-error>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="userName">
+          <mat-error>Enter Email</mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [type]="hide ? 'password' :'text'" placeholder="Password" formControlName="password" >
+          <mat-error>Enter password</mat-error>
+          <i class="material-icons" matSuffix (click)="hide = !hide" style="cursor: pointer;">{{hide ? 'visibility':'visibility_off'}}</i>
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput type="text" placeholder="Mobile Number" formControlName="mobileNumber">
+          <mat-error>Enter Mobile Number</mat-error>
+        </mat-form-field>
+      </div>
+      <button type="submit" name="" value="Next" id="button">SignUp</button>  
+    </form>
+</div>
