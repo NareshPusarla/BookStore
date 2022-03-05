@@ -1,0 +1,123 @@
+.main{
+    height: 100%;
+    background-color: silver;
+}
+
+.logo{
+    position: absolute;
+    top: 50%;
+    left: 37%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 10px;
+    width: 380px;
+    background-color: whitesmoke;
+}
+
+.logo img{
+    border-radius: 10px;
+}
+
+.switch{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.switch button{
+    margin-right: 5px;
+    width: 40%;
+    font-size: 18px;
+    height: 40px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+
+}
+
+#indicator{
+    margin-left: 130px;
+    width: 40%;
+    border: none;
+    background-color: #f91f1f;
+    height: 3px;
+    margin-top: -20px;
+    transform: translateX(-100px);
+}
+
+form{
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    border: 1px solid silver;
+    border-radius: 10px;
+    width: 350px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+form mat-form-field{
+    width: 100%;
+}
+
+form mat-icon{
+    margin-left: -40px;
+    cursor: pointer;
+}
+
+.show{
+    margin-left: -35px;
+    border-radius: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: silver;
+    float: right;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+    
+#btn{
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    background: #f91f1f;
+    height: 40px;
+    position: relative;
+    border-radius: 5px;
+    border: none;
+}
+
+.or{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.product{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#Facebook{
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.911);
+    margin-right: 5px;
+    width: 160px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(121, 121, 214);
+}
+
+#Google{
+    font-size: 17px;
+    font-family: sans-serif;
+    margin-left: 5px;
+    width: 160px;
+    height: 40px;
+    border: none;
+    border-radius: 3px;
+}

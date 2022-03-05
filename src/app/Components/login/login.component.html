@@ -1,0 +1,39 @@
+<div class="main">
+    <div class="logo">
+      <img src="../../../assets/shopping.png" alt="" style="width: 350px;">
+    </div>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div fxLayout.xs="column" fxLayoutAlign.xs="center center" class="switch">
+          <button>Login</button>
+          <button (click)="go()">SignUp</button>
+          
+        </div>
+        <hr id="indicator">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Email Id</mat-label>
+            <input matInput placeholder="Email Id" formControlName="userName" >
+            <mat-error>Enter email</mat-error>
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [type]="hide ? 'password' :'text'" placeholder="Password" formControlName="password">
+            <mat-error>Enter password</mat-error>
+            <i class="material-icons" matSuffix (click)="hide = !hide" style="cursor: pointer;">{{hide ? 'visibility':'visibility_off'}}</i>
+          </mat-form-field>
+
+          <a href="">Forgot password?</a>
+        </div>
+        <button type="submit" name="" value="Next" id="btn">Login</button>  
+        <div class="or">
+          <h2>OR</h2>
+        </div>
+        <div class="product">
+          <button id="Facebook">Facebook</button>
+          <button id="Google">Google</button>
+        </div>
+      </form>  
+  </div>
+
+  
