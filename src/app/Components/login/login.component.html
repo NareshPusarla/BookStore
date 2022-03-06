@@ -1,15 +1,16 @@
-<div class="main">
-    <div class="logo">
+<div class="main" fxLayout="column">
+    <div class="logo" fxLayout="row" fxHide.xs="true">
       <img src="../../../assets/shopping.png" alt="" style="width: 350px;">
     </div>
+    <div fxLayout="row">
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-        <div fxLayout.xs="column" fxLayoutAlign.xs="center center" class="switch">
+        <div class="switch">
           <button>Login</button>
           <button (click)="go()">SignUp</button>
           
         </div>
         <hr id="indicator">
-        <div>
+        <div fxLayout="column">
           <mat-form-field appearance="outline">
             <mat-label>Email Id</mat-label>
             <input matInput placeholder="Email Id" formControlName="userName" >
@@ -25,15 +26,18 @@
 
           <a href="">Forgot password?</a>
         </div>
-        <button type="submit" name="" value="Next" id="btn">Login</button>  
+        <div fxLayout="column">
+          <button type="submit" name="" value="Next" id="btn">Login</button>  
+        </div>
         <div class="or">
           <h2>OR</h2>
         </div>
-        <div class="product">
+        <div class="product" fxLayout="row">
           <button id="Facebook">Facebook</button>
           <button id="Google">Google</button>
         </div>
-      </form>  
+      </form> 
+    </div> 
   </div>
 
   
