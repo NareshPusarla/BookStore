@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           console.log(response);
           localStorage.setItem('token',response.id);
           this.snackBar.open('login successfull','dismiss', {duration:3000});
-          this.router.navigateByUrl("/dashboard")
+          this.router.navigateByUrl("/dashboard/books")
         }, (error: any) =>{
           console.log(error);
         })

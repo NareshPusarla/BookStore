@@ -1,0 +1,47 @@
+.container{
+    margin: 0 200px;
+}
+
+.header{
+    margin-top: 20px;
+}
+
+.description{
+    display: flex;
+}
+.book{
+    margin: 20px 0 0 40px;
+    border: 2px solid rgb(219, 202, 202);
+    width: 275px;
+    height: 325px;
+}
+.book img{
+    margin: 20px 30px;
+}
+
+.options{
+    display: flex;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#bag{
+    background-color: brown;
+    color: #fff;
+    width: 135px;
+    height: 30px;
+    margin-right: 10px;
+    border: none;
+}
+
+#wishlist{
+    background-color: black;
+    color: #fff;
+    width: 135px;
+    height: 30px;
+    border: none;
+}
+
+.book_info{
+    margin: 20px 0 0 50px;
+}

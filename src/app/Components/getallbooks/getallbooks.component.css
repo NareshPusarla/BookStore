@@ -1,0 +1,63 @@
+.container{
+    margin: 0px 200px;
+    background-color: #fff;
+}
+
+.header{
+    display: flex;
+    margin-top: 20px;
+}
+
+.books_count{
+    display: flex;
+}
+
+.sort{
+    margin-left: auto;
+}
+
+.books_list{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 4;
+}
+
+.book{
+    border: 1px solid silver;
+    width: 240px;
+    margin-right: 37px;
+    margin-bottom: 20px;
+}
+
+.book_image{
+    width: 240px;
+    height: 200px;
+    background-color: #f5f5f5;
+}
+
+.book_data{
+    margin: 15px 15px;
+}
+
+.book_image img{
+    margin: 30px 70px;
+}
+
+.rating{
+    width: 40px;
+    height: 20px;
+    background-color: green;
+    color: #fff;
+    margin-top: 0;
+    display: flex;
+}
+
+.star{
+    margin-top: 0px;
+    margin-left: 3px;
+    height: 18px;
+}
+
+.cost{
+    display: flex;
+}

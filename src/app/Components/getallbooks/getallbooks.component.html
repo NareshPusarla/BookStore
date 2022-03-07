@@ -1,0 +1,39 @@
+<div class="body">
+    <div class="container">
+        <div class="header">
+            <div class="books_count">
+                <p id="books" style="font-size: 22px; margin-top: 13px;">Books</p>
+                <p id="count" style="font-size: 12px; margin: 16px 0 0 5px;">({{numberOfBooks}} items)</p>
+            </div>
+            <div class="sort">
+                <mat-form-field appearance="outline">
+                    <mat-label>Sort by relevance</mat-label>
+                    <mat-select>
+                        <mat-option (click)="low()" value="one">Low</mat-option>
+                        <mat-option (click)=" high()" value="two">High</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="books_list">
+            <div class="book" *ngFor="let book of allBooks">
+                <div class="book_image" (click)="quickview(book)">
+                    <img src="../../../assets/Image 11.png" alt="">
+                </div>
+                <div class="book_data">
+                    <div><b>{{book.bookName}}</b></div>
+                    <div>by {{book.author}}</div>
+                    <div class="rating">
+                        <p>4.5</p>
+                        <img src="../../../assets/star_outline_white_24dp.svg" alt="" class="star">
+                        <p style="color: black; margin-left: 5px;">{{book.quantity}}</p>
+                    </div>
+                    <div class="cost">
+                        <p><b>Rs. {{book.discountPrice}}</b></p>
+                        <p style="margin-left: 5px; font-size: 10px;"><s>Rs.{{book.price}}</s></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
