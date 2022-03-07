@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   hide:boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private userService:UserserviceService, private route:Router , private snackBar: MatSnackBar) {}
+  constructor(private formBuilder: FormBuilder, private userService:UserserviceService, private router:Router , private snackBar: MatSnackBar) {}
 
   ngOnInit():void {
     this.registerForm = this.formBuilder.group({
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   go(){
-    this.route.navigate(['/signup'])
+    this.router.navigate(['/signup'])
   }
 
   onSubmit(){
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
           console.log(response);
           localStorage.setItem('token',response.id);
           this.snackBar.open('login successfull','dismiss', {duration:3000});
+          this.router.navigateByUrl("/dashboard")
         }, (error: any) =>{
           console.log(error);
         })
