@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AuthserviceService } from '../app/service/authentication/authservice.service';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -13,13 +14,15 @@ import { SignUpComponent } from'./Components/sign-up/sign-up.component';
 import { LoginComponent } from './Components/login/login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [
+    AuthserviceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
