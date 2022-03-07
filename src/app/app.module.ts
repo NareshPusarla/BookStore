@@ -14,7 +14,12 @@ import { SignUpComponent } from'./Components/sign-up/sign-up.component';
 import { LoginComponent } from './Components/login/login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
+import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
+import { QuickviewComponent } from './Components/quickview/quickview.component';
 
 
 @NgModule({
@@ -22,7 +27,10 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     AppComponent,
     SignUpComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    GetallbooksComponent,
+    ForgotpasswordComponent,
+    QuickviewComponent
   ],
   imports: [
     BrowserModule,
@@ -31,11 +39,12 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
     MatIconModule,
-    FlexLayoutModule
+    MatSelectModule
   ],
   providers: [
     AuthserviceService
