@@ -1,3 +1,5 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
+
 <div>
     <div class="container">
         <div class="header">
@@ -11,11 +13,18 @@
                 </div>
                 <div class="options"> 
                     <div>
-                        <button id="bag">ADD TO BAG</button>
+                        <button id="bag" (click)="addToBag()" *ngIf="showBag">ADD TO BAG</button>
                     </div>
+
+                    <div class="quantity"  *ngIf="showButton">
+                        <button type="button" (click)="minus()">-</button>
+                        <input type="text" [value]="quantity">
+                        <button type="button" (click)="plus()">+</button>
+                    </div>
+
                     <div>
+                        <mat-icon class="wishlistIcon">favorite</mat-icon>
                         <button id="wishlist">
-                            <mat-icon class="wishlistIcon" style="margin-right: 2px; height: 5px;">favorite</mat-icon>
                             WISHLIST
                         </button>
                     </div>
@@ -23,58 +32,58 @@
             </div>
             <div class="book_info">
                 <div class="book_data">
-                    <p>author</p>
-                </div>
-                <div class="rating">
-                    <p>4.5</p>
-                    <img src="../../../assets/star_outline_white_24dp.svg" alt="" class="star">
-                    <p style="color: black; margin-left: 5px;">10</p>
-                </div>
-                <div class="cost">
-                    <p><b>Rs. 100</b></p>
-                    <p style="margin-left: 5px; font-size: 10px;"><s>Rs.100</s></p>
+                    <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;"><b>{{bookInfo?.bookName}}</b></div>
+                    <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by {{bookInfo?.author}}</div>
+                    <div class="rating">
+                        4.5
+                        <img src="../../../assets/star_outline_white_24dp.svg" alt="" class="star">
+                        <p>({{bookInfo?.quantity}})</p>
+                    </div>
+                    <div class="cost">
+                        <p><b>Rs.{{bookInfo?.discountPrice}}</b></p>
+                        <p><s>Rs.{{bookInfo?.price}}</s></p>
+                    </div>
                 </div>
                 <hr>
                 <div>
-                    <p>description</p>
+                    <ul>
+                        <li>Book Detail</li>
+                    </ul> 
+                </div>
+                <div class="book_detail">
+                    <p>{{bookInfo ?. description}}</p>
                 </div>
                 <hr>
                 <div>
                     <div class="customerfeedback">
                         <span>Customer Feedback</span>
                     </div>
-                    <div>
+                    <div class="review_box">
                         <p>Overall Rating</p>
-                        <div>
+                        <div class="starcontainer">
                             <div class="star-widget">
-                            
-                                <input type="radio" name="rate" id="rate-5" value="5"> 
-                                <label for="rate-5" class="fa fa-star"></label>
-    
-                                <input type="radio" name="rate" id="rate-4"value="4">
-                                <label for="rate-4" class="fa fa-star"></label>
-    
-                                <input type="radio" name="rate" id="rate-3" value="3">
-                                <label for="rate-3" class="fa fa-star"></label>
-    
-                                <input type="radio" name="rate" id="rate-2" value="2">
-                                <label for="rate-2" class="fa fa-star"></label>
-    
-                                <input type="radio" name="rate" id="rate-1" value="1">
-                                <label for="rate-1" class="fa fa-star"></label>
-                               
+                              <input type="radio" name="rate" id="rate-5">
+                              <label for="rate-5" class="fas fa-star"></label>
+                              <input type="radio" name="rate" id="rate-4">
+                              <label for="rate-4" class="fas fa-star"></label>
+                              <input type="radio" name="rate" id="rate-3">
+                              <label for="rate-3" class="fas fa-star"></label>
+                              <input type="radio" name="rate" id="rate-2">
+                              <label for="rate-2" class="fas fa-star"></label>
+                              <input type="radio" name="rate" id="rate-1">
+                              <label for="rate-1" class="fas fa-star"></label>
+                              <form action="#">
+                                <div class="textarea">
+                                  <textarea cols="30" placeholder="write your review..."></textarea>
+                                </div>
+                                <div class="btn">
+                                  <button type="submit">Submit</button>
+                                </div>
+                              </form>
                             </div>
                         </div>
-        
                     </div>
-                    <div>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                    </div>
-                    <div>
-                        <button>Submit</button>
-                    </div>
-                </div>
-                
+                </div> 
             </div>
         </div>
     </div>

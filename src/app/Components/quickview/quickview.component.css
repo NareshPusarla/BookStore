@@ -1,5 +1,5 @@
 .container{
-    margin: 0 200px;
+    margin: 0 110px;
 }
 
 .header{
@@ -34,14 +34,157 @@
     border: none;
 }
 
+.quantity{
+    font-size: 20px;
+    margin-right: 2px;
+}
+
+.quantity button{
+    height: 35px;
+    width: 35px;
+    border-radius: 70%;
+    background-color: #fff;
+    border: 1px solid silver;
+}
+
+.quantity input{
+    width: 50px;
+    height: 35px;
+    margin:  0 10px;
+    text-align: center;
+    border: 1px solid silver;
+}
+
 #wishlist{
     background-color: black;
     color: #fff;
     width: 135px;
-    height: 30px;
+    height: 32px;
     border: none;
+    padding-left: 30px;
+}
+
+.wishlistIcon{
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 3px;
+    color: #fff;
 }
 
 .book_info{
     margin: 20px 0 0 50px;
+    width: 800px;
 }
+
+.book_data{
+    margin: 0px 15px;
+}
+
+.rating{
+    width: 45px;
+    height: 20px;
+    background-color: green;
+    color: #fff;
+    margin-bottom: 15px;
+    display: flex;
+    padding-left: 10px;
+}
+
+.rating p{
+    color: rgb(187, 187, 183);
+    margin-left: 15px;
+}
+
+.star{
+    margin-top: 0px;
+    margin-left: 3px;
+    height: 18px;
+}
+
+.cost{
+    display: flex;
+}
+
+.cost b{
+    font-size: 25px;
+}
+
+.cost s{
+    font-size: 12px;
+    margin-left: 10px;
+    color: rgb(187, 187, 183);
+}
+
+ul{
+    margin-left: -25px;
+    color: rgb(187, 187, 183);
+}
+
+.book_detail{
+    color: rgb(122, 122, 118);
+}
+
+.customerfeedback{
+    font-size: 17px;
+    color: black;
+}
+
+.review_box{
+    padding: 10px 20px;
+    background-color: rgb(248, 246, 246);
+    height: 180px;
+}
+
+/* star */
+
+.starcontainer{
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .star-widget label{
+    font-size: 40px;
+    color: #444;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+  }
+
+  form .textarea{
+    height: 75px;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: black;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+  }
+
+.review_box button{
+    float: right;
+    background-color: rgb(61, 61, 255);
+    color: #fff;
+    border: none;
+    height: 25px;
+    width: 100px;
+    margin-top: 15px;
+}
+
+/* input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
+  color: #fd4;
+}
+input:checked ~ label{
+  color: #fd4;
+}
+input#rate-5:checked ~ label{
+  color: #fe7;
+  text-shadow: 0 0 20px #952;
+} */
