@@ -1,0 +1,42 @@
+<div>
+    <div class="container">
+        <div class="header">
+            <p>Home/ My cart</p>
+        </div>
+        <div class="items">
+            <div class="items_header">
+                <div>My cart({{cartCount}})</div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label><b>Use current loaction</b></mat-label>
+                        <mat-select>
+                            <mat-option></mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="book" *ngFor="let book of cartBookData">
+                <div class="bookImg"><img src="../../../assets/Image 1@2x.png" alt=""></div>
+                <div class="bookinfo">
+                    <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">{{book.product_id.bookName}}</div>
+                    <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by {{book.product_id.author}}</div>
+                    <div class="cost">
+                        <p><b>Rs.{{book.product_id.discountPrice}}</b></p>
+                        <p><s>Rs.{{book.product_id.discountPrice}}</s></p>
+                    </div>
+                    <div class="quantity">
+                        <button type="button" (click)="minus(book)">-</button>
+                        <input type="text" [value]="bookQuantity">
+                        <button type="button" (click)="plus(book)">+</button>
+                        <p (click)="removeCartItem(book)">Remove</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="order">Place Order</button>
+            </div>
+        </div>
+        <div class="address">AddressDetails</div>
+        <div class="summary">Order Summary</div>
+    </div>
+</div>

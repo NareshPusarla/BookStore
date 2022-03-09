@@ -20,6 +20,8 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
 import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
+import { CartComponent } from './Components/cart/cart.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { QuickviewComponent } from './Components/quickview/quickview.component';
     DashboardComponent,
     GetallbooksComponent,
     ForgotpasswordComponent,
-    QuickviewComponent
+    QuickviewComponent,
+    CartComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

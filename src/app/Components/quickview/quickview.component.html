@@ -3,10 +3,13 @@
 <div>
     <div class="container">
         <div class="header">
-            <p>Home/<b>Book(01)</b></p>
+            <p>Home/<b>Book({{bookInfo?.quantity}})</b></p>
         </div>
         <div class="description">
-            <div></div>
+            <div class="sampleimg">
+                <img src="../../../assets/Image 1.png" alt="">
+                <img src="../../../assets/Image 46.png" alt="">
+            </div>
             <div>
                 <div class="book">
                     <img src="../../../assets/Image 11@2x.png" alt="">
@@ -18,11 +21,11 @@
 
                     <div class="quantity"  *ngIf="showButton">
                         <button type="button" (click)="minus()">-</button>
-                        <input type="text" [value]="quantity">
+                        <input type="text" [value]="cartQuantity">
                         <button type="button" (click)="plus()">+</button>
                     </div>
 
-                    <div>
+                    <div (click)="addToWishlist()">
                         <mat-icon class="wishlistIcon">favorite</mat-icon>
                         <button id="wishlist">
                             WISHLIST

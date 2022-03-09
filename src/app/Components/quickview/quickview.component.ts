@@ -9,7 +9,7 @@ import { BookserviceService } from 'src/app/service/bookservice/bookservice.serv
 })
 export class QuickviewComponent implements OnInit {
 
-  quantity:number = 1;
+  cartQuantity:number = 1;
   showButton:boolean = false;
   showBag:boolean = true;
   bookId:any;
@@ -20,18 +20,50 @@ export class QuickviewComponent implements OnInit {
   ngOnInit(): void {
     this.getBookDetail();
     this.bookId = this.route.snapshot.params['id'];
-    console.log("id is", this.bookId);
-    
+  }
+
+  getBookDetail(){
+    this.bookservice.getBooks().subscribe((res:any)=>{ 
+      res.result.forEach((element:any) => {
+        if(element._id == this.bookId){
+          this.bookInfo = element;
+          console.log("boofInfo", this.bookInfo);
+        }  
+      });
+    }, error=>{
+      console.log(error); 
+    })
   }
 
   addToBag(){
     this.showButton = true;
     this.showBag = false;
+    this.bookservice.addCartItem(this.bookId).subscribe((res:any)=>{
+      console.log("book id for cart", res);
+    }, error=>{
+      console.log(error);
+    })
+  }
+
+  addToWishlist(){
+    this.bookservice.addWishList(this.bookId).subscribe((res:any)=>{
+      console.log("book id for wishlist", res);  
+    }, error=>{
+      console.log(error);
+    })
   }
 
   minus(){
-    if(this.quantity != 1){
-      this.quantity--;
+    if(this.cartQuantity != 1){
+      this.cartQuantity--;
+      let data = {
+        "quantityToBuy": this.cartQuantity
+      }
+      this.bookservice.cartItemQuantity(this.bookInfo._id, data).subscribe((res:any)=>{
+        console.log("adding to cart of this bookId", this.cartQuantity);
+      }, error=>{
+        console.log(error);
+      })
     }
     else{
       this.showButton = false;
@@ -40,22 +72,17 @@ export class QuickviewComponent implements OnInit {
   }
 
   plus(){
-    if(this.quantity){
-      this.quantity++;
+    if(this.cartQuantity){
+      this.cartQuantity++;
+      let data = {
+        "quantityToBuy": this.cartQuantity
+      }
+      this.bookservice.cartItemQuantity(this.bookInfo._id, data).subscribe((res:any)=>{
+        console.log("adding to cart of this bookId", this.cartQuantity);
+      }, error=>{
+        console.log(error);
+      })
     }
   }
 
-  getBookDetail(){
-    this.bookservice.getBooks().subscribe((res:any)=>{
-      
-      res.result.forEach((element:any) => {
-        if(element._id == this.bookId){
-          this.bookInfo = element;
-        }
-        
-      });
-    }, error=>{
-      console.log(error); 
-    })
-  }
 }
