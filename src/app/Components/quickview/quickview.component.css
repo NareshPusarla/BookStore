@@ -1,8 +1,14 @@
 .container{
-    margin: 0 110px;
+    margin: 0 150px;
 }
 
 .header{
+    margin-top: 20px;
+}
+
+.sampleimg{
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
 }
 
@@ -10,7 +16,7 @@
     display: flex;
 }
 .book{
-    margin: 20px 0 0 40px;
+    margin: 20px 0 0 0px;
     border: 2px solid rgb(219, 202, 202);
     width: 275px;
     height: 325px;
@@ -21,7 +27,6 @@
 
 .options{
     display: flex;
-    margin-left: 40px;
     margin-top: 20px;
 }
 
@@ -45,6 +50,7 @@
     border-radius: 70%;
     background-color: #fff;
     border: 1px solid silver;
+    font-size: 20px;
 }
 
 .quantity input{
@@ -61,12 +67,12 @@
     width: 135px;
     height: 32px;
     border: none;
-    padding-left: 30px;
+    padding-left: 35px;
 }
 
 .wishlistIcon{
     position: absolute;
-    margin-left: 10px;
+    margin-left: 17px;
     margin-top: 3px;
     color: #fff;
 }
@@ -172,7 +178,8 @@ ul{
     background-color: rgb(61, 61, 255);
     color: #fff;
     border: none;
-    height: 25px;
+    font-size: 15px;
+    height: 30px;
     width: 100px;
     margin-top: 15px;
 }

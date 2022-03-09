@@ -1,22 +1,22 @@
-<div>
-    <div class="container">
-        <div class="book">
+<div fxLayout="column">
+    <div class="container" fxLayout="row" ngClass.xs="container-xs" ngClass.sm="container-sm" ngClass.md="container-md">
+        <div class="book" routerLink="/dashboard/books" fxLayout="row" ngClass.xs="book-xs" ngClass.sm="book-sm" ngClass.md="book-md">
             <div><img src="../../../assets/education.svg" alt=""></div>
-            <div><p style="color: #fff;">Bookstore</p></div>
+            <div fxHide.xs="true" fxHide.sm="true"><p style="color: #fff; margin: 5px 0 0 10px;">Bookstore</p></div>
         </div>
-        <div class="filter">
-            <div class="seach_icon">
+        <div class="filter" fxLayout="row">
+            <div class="seach_icon" fxHide.xs="true" fxHide.sm="true">
                 <img src="../../../assets/search_black_24dp.svg" alt="" class="search_icon">
             </div>
             <div>
-                <input placeholder="Search..." style="font-size: 13px; padding-left: 33px;" class="search">
+                <input placeholder="Search..." style="font-size: 13px; padding-left: 33px;" class="search" ngClass.xs="search-xs" ngClass.sm="search-sm" ngClass.md="search-md">
             </div>            
         </div>
-        <div class="profile">
+        <div class="profile" ngClass.xs="profile-xs" ngClass.sm="profile-sm" ngClass.md="profile-md">
             <img src="../../../assets/perm_identity_white_24dp.svg" alt="">
             <p style="font-size: 13px;">Profile</p>
         </div>
-        <div class="cart">
+        <div class="cart" routerLink="/dashboard/cart" fxLayout="column">
             <img src="../../../assets/supermarket.svg" alt="">
             <p style="font-size: 13px;">Cart</p>
         </div>

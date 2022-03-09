@@ -1,0 +1,45 @@
+.container{
+    margin: 0 150px;
+}
+
+.header{
+    margin: 15px 0;
+}
+
+.wish_header{
+    display: flex;
+    border: 1px solid rgb(219, 202, 202);
+    width: 70%;
+    height: auto;
+    padding: 20px 30px;
+    background-color: #F5F5F5;
+}
+
+.book{
+    display: flex;
+    border: 1px solid rgb(219, 202, 202);
+    width: 70%;
+    height: auto;
+    padding: 30px 30px;
+}
+
+.bookinfo{
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.cost{
+    display: flex;
+}
+
+.cost s{
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.status{
+opacity: 0.5;
+margin-left: 600px;
+margin-top: 20px;
+cursor: pointer;
+}

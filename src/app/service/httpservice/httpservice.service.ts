@@ -12,7 +12,7 @@ export class HttpserviceService {
   constructor(private httpClient:HttpClient) { }
 
   postData(url:string, reqData:any={}, token:boolean=false, httpoptions:any={}){
-    console.log(reqData);
+    console.log(reqData,"token",token);
     return this.httpClient.post(this.baseUrl+url, reqData, token && httpoptions)
   }
 
@@ -21,6 +21,10 @@ export class HttpserviceService {
   }
 
   putData(url:string, reqData:any={}, token:boolean=false, httpoptions:any={}){
+    return this.httpClient.put(this.baseUrl+url, reqData, token && httpoptions)
+  }
+
+  deleteData(url:string, reqData:any={}, token:boolean=false, httpoptions:any={}){
     return this.httpClient.put(this.baseUrl+url, reqData, token && httpoptions)
   }
 }

@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         }
         this.userService.userLogin(data).subscribe((response:any)=>{
           console.log(response);
-          localStorage.setItem('token',response.id);
+          localStorage.setItem('token',response.result.accessToken);
           this.snackBar.open('login successfull','dismiss', {duration:3000});
           this.router.navigateByUrl("/dashboard/books")
         }, (error: any) =>{

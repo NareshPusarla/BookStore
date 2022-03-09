@@ -3,6 +3,10 @@
     background-color: silver;
 }
 
+.main-xs{
+    background-color: white;
+}
+
 .logo{
     position: absolute;
     top: 50%;
@@ -12,6 +16,10 @@
     border-radius: 10px;
     width: 380px;
     background-color: whitesmoke;
+}
+
+.logo-md{
+    left: 30%;
 }
 
 .logo img{
