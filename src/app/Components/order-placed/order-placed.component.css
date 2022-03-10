@@ -1,0 +1,45 @@
+.orderimg{
+    width: 200px;
+    height: 200px;
+    margin-top: 90px;
+    margin-left: 590px;
+
+}
+.message{
+    text-align: center;
+    font-size: 18px;
+    color: #696767;
+    opacity: 1;
+}
+
+table{
+    width: 65%;
+    margin-left: 240px;
+}
+
+table,tr, td {
+    border: 1px solid lightgray;
+}
+
+th{
+    background-color: #fafafa;
+}
+
+td{
+    background-color: #ffffff;
+    padding: 15px 0;
+}
+
+.continue{
+    margin-top: 40px;
+    margin-left: 40%;
+    width: 200px;
+    height: 40px;
+    border-radius: 2px;
+    border: none;
+    background-color: rgb(61, 61, 255);
+    color: #f5f3f3;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+}
