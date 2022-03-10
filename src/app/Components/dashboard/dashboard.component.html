@@ -9,10 +9,10 @@
                 <img src="../../../assets/search_black_24dp.svg" alt="" class="search_icon">
             </div>
             <div>
-                <input placeholder="Search..." style="font-size: 13px; padding-left: 33px;" class="search" ngClass.xs="search-xs" ngClass.sm="search-sm" ngClass.md="search-md">
+                <input placeholder="Search..." style="font-size: 13px; padding-left: 33px;" class="search" ngClass.xs="search-xs" ngClass.sm="search-sm" ngClass.md="search-md" (keyup)="updateText($event)">
             </div>            
         </div>
-        <div class="profile" ngClass.xs="profile-xs" ngClass.sm="profile-sm" ngClass.md="profile-md">
+        <div class="profile" routerLink="/dashboard/profile" ngClass.xs="profile-xs" ngClass.sm="profile-sm" ngClass.md="profile-md">
             <img src="../../../assets/perm_identity_white_24dp.svg" alt="">
             <p style="font-size: 13px;">Profile</p>
         </div>

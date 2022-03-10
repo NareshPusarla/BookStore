@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookserviceService } from 'src/app/service/bookservice/bookservice.service';
 
 @Component({
@@ -12,10 +13,28 @@ export class CartComponent implements OnInit {
   cartCount:any
   bookQuantity:any = 1;
   bookId:any;
-  constructor(private bookService:BookserviceService) { }
+  show:boolean = true;
+  continue:boolean = true;
+
+  showCustomerDetails:boolean = false;
+  address:boolean = true;
+
+  showSummeryDetails:boolean = false;
+  summery:boolean = true;
+
+  customerForm! : FormGroup;
+
+  constructor(private bookService:BookserviceService, private formbuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.getItems();
+    this.customerForm = this.formbuilder.group({
+      fullName: ['', Validators.required],
+      mobileNumber: ['', Validators.required],
+      address: ['', Validators.required],
+      city: ['', Validators.required],
+      state: ['', Validators.required],
+    })
   }
 
   getItems(){
@@ -26,6 +45,7 @@ export class CartComponent implements OnInit {
     }, error=>{
       console.log(error); 
     })
+
   }
 
   minus(book:any){
@@ -62,5 +82,23 @@ export class CartComponent implements OnInit {
     }, error=>{
       console.log(error);
     })
+
+    location.reload();
+  }
+
+  showDetails(){
+    if(this.showCustomerDetails == false){
+      this.showCustomerDetails = true
+      this.address = false;
+    }
+    this.show = false;
+  }
+
+  showOrderDetails(){
+    if(this.showSummeryDetails == false){
+      this.showSummeryDetails = true
+      this.summery = false;
+    }
+    this.continue= false
   }
 }

@@ -6,7 +6,7 @@
         <div class="items">
             <div class="items_header">
                 <div>My cart({{cartCount}})</div>
-                <div>
+                <div class="location">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Use current loaction</b></mat-label>
                         <mat-select>
@@ -18,11 +18,13 @@
             <div class="book" *ngFor="let book of cartBookData">
                 <div class="bookImg"><img src="../../../assets/Image 1@2x.png" alt=""></div>
                 <div class="bookinfo">
-                    <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">{{book.product_id.bookName}}</div>
-                    <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by {{book.product_id.author}}</div>
+                    <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">
+                        {{book.product_id.bookName}}</div>
+                    <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by
+                        {{book.product_id.author}}</div>
                     <div class="cost">
                         <p><b>Rs.{{book.product_id.discountPrice}}</b></p>
-                        <p><s>Rs.{{book.product_id.discountPrice}}</s></p>
+                        <p><s>Rs.{{book.product_id.price}}</s></p>
                     </div>
                     <div class="quantity">
                         <button type="button" (click)="minus(book)">-</button>
@@ -31,12 +33,84 @@
                         <p (click)="removeCartItem(book)">Remove</p>
                     </div>
                 </div>
+                <div class="button">
+                    <button class="order" (click)="showDetails()" *ngIf="show">Place Order</button>
+                </div>
             </div>
-            <div>
-                <button class="order">Place Order</button>
+            
+        </div>
+        <div class="address">
+            <p style="font-size: 15px;" *ngIf="address">AddressDetails</p>
+            <div *ngIf="showCustomerDetails" class="customeraddress">
+                <form [formGroup]="customerForm">
+                    <div class="customerHeader">
+                        <p style="font-size: 20px;">Customer Details</p>
+                        <button>Add New Address</button>
+                    </div>
+                    <div class="details">
+                        <div class="fullName">
+                            <mat-label>Full Name</mat-label>
+                            <mat-form-field appearance="outline">
+                                <input matInput placeholder="Full Name" formControlName="fullName" >
+                                <mat-error>Enter Full Name</mat-error>
+                            </mat-form-field>
+                        </div>
+                        
+                        <div class="fullName">
+                            <mat-label>Mobile Number</mat-label>
+                            <mat-form-field appearance="outline">
+                                <input matInput type="password" placeholder="Mobile Number" formControlName="mobileNumber">
+                                <mat-error>Enter Mobile Number</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="workAddress">
+                        <p class="optionAddress">1.<b>Work</b>Edit</p>
+                        <p>Address</p>
+                        <textarea type="text" class="addressInput" formControlName="address"></textarea>
+                        <div class="city">
+                            <div class="fullName">
+                                <mat-label>city/town</mat-label>
+                                <input matInput placeholder="City/State" formControlName="city">
+                            </div>
+                            
+                            <div class="fullName">
+                                <mat-label>state</mat-label>
+                                <input matInput type="text" placeholder="State" formControlName="state">    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeAddress">
+                        <p class="optionAddress">2.<b>Home</b></p>
+                        <p><b>Address</b></p>
+                        <p><b>BridgeLabz Solutions LLP, No.42, 14th Main, 15th Cross, Sector 4, Opp to BDA<br>
+                            complex, near Kumarakom restaurant, HSR Layout, Bangalore</b></p>
+                    </div>
+                    <button class="continue" (click)="showOrderDetails()" *ngIf="continue">CONTINUE</button>
+                </form>
             </div>
         </div>
-        <div class="address">AddressDetails</div>
-        <div class="summary">Order Summary</div>
+        <div class="summary">
+            <p *ngIf="summery">Order Summery</p>
+            <div *ngIf="showSummeryDetails" class="showSummrey">
+                <p style="font-size: 20px; margin-bottom: 20px;">Order Summery</p>
+                <div class="book" *ngFor="let book of cartBookData">
+                    <div class="bookImg"><img src="../../../assets/Image 1@2x.png" alt=""></div>
+                    <div class="bookinfo">
+                        <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">
+                            {{book.product_id.bookName}}</div>
+                        <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by
+                            {{book.product_id.author}}</div>
+                        <div class="cost">
+                            <p><b>Rs.{{book.product_id.discountPrice}}</b></p>
+                            <p><s>Rs.{{book.product_id.price}}</s></p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="order" routerLink="/dashboard/order">CHECKOUT</button>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

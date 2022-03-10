@@ -4,20 +4,20 @@
             <p>Home / My wishlist</p>
         </div>
         <div class="wish_header">
-            <p><b>My Wishlist (02)</b></p>
+            <p><b>My Wishlist ({{wishListCount}})</b></p>
         </div>
-        <div class="book">
+        <div class="book" *ngFor="let book of wishListData">
             <div class="bookImg"><img src="../../../assets/Image 1@2x.png" alt=""></div>
             <div class="bookinfo">
-                <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">bookname</div>
-                <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by author</div>
+                <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">{{book.product_id.bookName}}</div>
+                <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by {{book.product_id.author}}</div>
                 <div class="cost">
-                    <p><b>Rs.discountPrice</b></p>
-                    <p><s>Rs.price</s></p>
+                    <p><b>Rs.{{book.product_id.discountPrice}}</b></p>
+                    <p><s>Rs.{{book.product_id.price}}</s></p>
                 </div>
             </div>
             <div>
-                <img src="../../../assets/delete_black_24dp.svg" alt="" class="status" (click)="removeItem()">
+                <img src="../../../assets/delete_black_24dp.svg" alt="" class="status" (click)="removeWishListItem(book)">
             </div>
         </div>
     </div>
