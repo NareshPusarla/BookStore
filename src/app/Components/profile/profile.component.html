@@ -1,0 +1,65 @@
+<div>
+    <div class="container">
+        <div class="header">
+            <p>Home/ <b>Profile</b></p>
+        </div>
+        <div class="profileInfo">
+            <div class="personal">
+                <p><b>Personal Details</b></p>
+                <p style="color: brown; font-size: 12px; margin-top: 2px;">Edit</p>
+            </div>
+            <div class="profile">
+                <mat-label>Full name</mat-label>
+                <input type="text" placeholder="Full name" [value]="fullName">
+            </div>
+            
+            <div class="profile">
+                <mat-label>Email Id</mat-label>
+                <input type="text" placeholder="Email Id" formControlName="state">    
+            </div>
+
+            <div class="profile">
+                <mat-label>Password</mat-label>
+                <input type="password" placeholder="Full name">
+            </div>
+            
+            <div class="profile">
+                <mat-label>Mobile Number</mat-label>
+                <input type="text" placeholder="Mobile Number" formControlName="state">    
+            </div>
+        </div>
+        <div class="address">
+            <div class="customerHeader">
+                <p style="font-size: 20px;">Address Details</p>
+                <button>Add New Address</button>
+            </div>
+            <div class="workAddress">
+                <p class="optionAddress">1.<b>Work</b>Edit</p>
+                <p>Address</p>
+                <textarea type="text" class="addressInput" formControlName="address"></textarea>
+                <div class="city">
+                    <div class="fullName">
+                        <mat-label>city/town</mat-label>
+                        <input placeholder="City/State" formControlName="city">
+                    </div>
+                    
+                    <div class="fullName">
+                        <mat-label>state</mat-label>
+                        <input type="text" placeholder="State" formControlName="state">    
+                    </div>
+                </div>
+            </div>
+            <div class="type">
+                <form action="/action_page.php">
+                    <p>Type</p>
+                    <input type="radio" name="" id="home" value="Home">
+                    <label for="home">Home</label>
+                    <input type="radio" name="" id="work" value="Work">
+                    <label for="work">Work</label> 
+                    <input type="radio" name="" id="other" value="Other">
+                    <label for="other">Other</label>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

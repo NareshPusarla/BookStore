@@ -1,0 +1,103 @@
+.container{
+    height: auto;
+    margin: 0 150px;
+    width: 50%;
+    padding-bottom: 100px;
+}
+
+.header{
+    margin-top: 20px;
+}
+
+.personal{
+    display: flex;
+    gap: 10px;
+}
+
+.profileInfo{
+    margin-left: 35px;
+    margin-bottom: 50px;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.profile input{
+    color: #857f7f;
+    background-color: #f5f3f3;
+    width: 550px;
+    height: 40px;
+    padding: 0 5px;
+    margin-top: 10px;
+    border: 1px solid rgb(219, 202, 202);
+    border-radius: 2px;
+}
+
+.address{
+    width: 76%;
+}
+
+.customerHeader{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 40px;
+}
+
+.customerHeader button{
+    margin-left: auto;
+    color: #A03037;
+    background-color: #fff;
+    border: 2px solid #A03037;
+    border-radius: 2px;
+    padding: 0 10px;
+}
+
+.workAddress{
+    margin-left: 35px;
+}
+
+.optionAddress b{
+    padding-right: 10px;
+}
+
+.addressInput{
+    width: 550px;
+    height: 60px;
+    color: #857f7f;
+    background-color: #f5f3f3;
+    border: 1px solid rgb(219, 202, 202);
+}
+
+.city{
+    display: flex;
+    gap: 10px;
+}
+
+.city input{
+    color: #857f7f;
+    background-color: #f5f3f3;
+    height: 40px;
+    width: 260px;
+    padding: 0 5px;
+    margin-top: 10px;
+    border: 1px solid rgb(219, 202, 202);
+    border-radius: 2px;
+}
+
+.fullName{
+    display: flex;
+    flex-direction: column;
+}
+
+.type{
+    margin-left: 35px;
+    margin-top: 10px;
+}
+
+.type label{
+    margin-right: 50px;
+}
+
