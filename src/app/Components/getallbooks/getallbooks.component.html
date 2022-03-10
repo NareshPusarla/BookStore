@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="books_list">
-            <div class="book" *ngFor="let book of allBooks">
+            <div class="book" *ngFor="let book of allBooks | filter:filteredString">
                 <div class="book_image" (click)="quickview(book)">
                     <img src="../../../assets/Image 11.png" alt="">
                 </div>

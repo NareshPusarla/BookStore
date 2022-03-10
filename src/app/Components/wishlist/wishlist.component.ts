@@ -9,6 +9,7 @@ import { BookserviceService } from 'src/app/service/bookservice/bookservice.serv
 export class WishlistComponent implements OnInit {
 
   wishListData:any;
+  wishListCount:any;
   bookId:any;
   constructor(private bookService:BookserviceService) { }
 
@@ -19,17 +20,19 @@ export class WishlistComponent implements OnInit {
   getWishlistItems(){
     this.bookService.getWishlistItem().subscribe((res:any)=>{
       console.log("book res", res);
-      this.wishListData = res;
+      this.wishListData = res.result;
+      this.wishListCount = res.result.length;
     }, error=>{
       console.log(error); 
     })
   }
 
-  removeItem(){
-    this.bookService.removeItemWishlist(this.bookId).subscribe((res:any)=>{
-      console.log("book res", res);
+  removeWishListItem(book:any){
+    this.bookService.removeItemWishlist(book.product_id._id).subscribe((res:any)=>{
+      console.log("removed the item from wishlist", res);
     }, error=>{
       console.log(error); 
     })
+    location.reload();
   }
 }

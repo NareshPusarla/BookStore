@@ -98,6 +98,6 @@ export class BookserviceService {
       })
 
     }
-    return this.httpService.deleteData('bookstore_user/remove_wishlist_item/'+id,{}, true, header)
+    return this.httpService.deleteData('bookstore_user/remove_wishlist_item/'+id, {}, true, header)
   }
 }

@@ -22,6 +22,9 @@ import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassw
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
+import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
+import { ProfileComponent } from './Components/profile/profile.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
     ForgotpasswordComponent,
     QuickviewComponent,
     CartComponent,
-    WishlistComponent
+    WishlistComponent,
+    OrderPlacedComponent,
+    ProfileComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

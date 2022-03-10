@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { DataServiceService } from 'src/app/service/dataservice/data-service.service';
 import { UserserviceService } from 'src/app/service/userservice/userservice.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class SignUpComponent implements OnInit {
   submitted = false;
   hide:boolean = true;
 
-  constructor(private formBuilder: FormBuilder, private userService:UserserviceService, private route:Router, private snackBar: MatSnackBar) {}
+  constructor(private formBuilder: FormBuilder, private userService:UserserviceService, private route:Router, private snackBar: MatSnackBar, private dataService:DataServiceService) {}
 
   ngOnInit():void {
     this.registerForm = this.formBuilder.group({
@@ -51,5 +52,9 @@ export class SignUpComponent implements OnInit {
     } else {
       console.log("invalid");
     }
+  }
+
+  send(registerForm:any){
+    this.dataService.sendUserDetails(registerForm.value.fullName.target.value); 
   }
 }
