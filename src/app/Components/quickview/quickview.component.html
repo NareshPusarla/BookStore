@@ -1,9 +1,7 @@
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
-
 <div>
     <div class="container" fxLayout="column" ngClass.sm="container-sm">
-        <div class="header" fxLayout="column">
-            <p>Home/<b>Book({{bookInfo?.quantity}})</b></p>
+        <div class="header" fxLayout="row">
+            <p routerLink="/dashboard/books">Home/</p><b>Book({{bookInfo?.quantity}})</b>
         </div>
         <div class="description" fxLayout="row">
             <div class="sampleimg" fxLayout="column">

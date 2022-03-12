@@ -140,6 +140,12 @@
     margin-left: 35px;
 }
 
+.details-xs{
+    margin-left: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
 .fullName{
     display: flex;
     flex-direction: column;
@@ -147,6 +153,10 @@
 
 .workAddress{
     margin-left: 35px;
+}
+
+.workAddress-xs{
+    margin-left: 0px;
 }
 
 .optionAddress b{
@@ -161,22 +171,40 @@
     border: 1px solid rgb(219, 202, 202);
 }
 
+.addressInput-xs{
+    width: 100%;
+}
+
 .city{
     display: flex;
     gap: 10px;
 }
 
-.city input{
+.city-xs{
+    display: flex;
+    flex-direction: column;
+}
+
+/* .city input{
     color: #857f7f;
     background-color: #f5f3f3;
     height: 40px;
     width: 195px;
     padding: 0 5px;
     margin-top: 10px;
+} */
+
+.city-xs input{
+    width: 100%;
 }
 
 .homeAddress{
+    margin-top: 10px;
     margin-left: 35px;
+}
+
+.homeAddress-xs{
+    margin-left: 0px;
 }
 
 .homeAddress p{
@@ -212,4 +240,12 @@
 
 .showSummrey{
     margin-bottom: 40px;
+}
+
+.order1{
+    margin-left: auto;
+}
+
+.order1-xs{
+float: left;
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { BookserviceService } from 'src/app/service/bookservice/bookservice.service';
 import { DataServiceService } from 'src/app/service/dataservice/data-service.service';
 import { UserserviceService } from 'src/app/service/userservice/userservice.service';
@@ -28,7 +29,7 @@ export class CartComponent implements OnInit {
   customerForm!:FormGroup;
   submitted = false;
 
-  constructor(private bookService:BookserviceService, private userService:UserserviceService, private formbuilder: FormBuilder, private snackBar: MatSnackBar, private dataService:DataServiceService) { }
+  constructor(private bookService:BookserviceService, private userService:UserserviceService, private formbuilder: FormBuilder, private snackBar: MatSnackBar, private dataService:DataServiceService, private route:Router) { }
 
   ngOnInit(): void {
     this.getItems();
@@ -39,8 +40,6 @@ export class CartComponent implements OnInit {
       city: ['', Validators.required],
       state: ['', Validators.required],
     })
-
-    // this.dataService.sendUserDetails(this.customerForm.value.);
   }
 
   onSubmit(){
@@ -62,7 +61,6 @@ export class CartComponent implements OnInit {
     } else {
       console.log("Fill the address details");
     }
-
   }
 
   getItems(){
@@ -113,6 +111,7 @@ export class CartComponent implements OnInit {
       console.log(error);
     })
 
+    this.getItems();
     location.reload();
   }
 
@@ -125,11 +124,34 @@ export class CartComponent implements OnInit {
   }
 
   showOrderDetails(){
-
     if(this.showSummeryDetails == false && this.customerForm.valid){
       this.showSummeryDetails = true
       this.summery = false;
     }
     this.continue= false
+  }
+
+  ordersummary() {
+
+    if(this.cartCount >= 1){
+      this.cartBookData.forEach((element: any) => { 
+        console.log(element);
+      });
+      let data = {
+        "orders": [
+          {
+            "product_id": "5f60c89223809243e2528781",
+            "product_name": "Xyzabc",
+            "product_quantity": 10,
+            "product_price": 1000
+          }
+        ]
+      }
+
+      this.bookService.orderCheckout(data).subscribe((response: any) => {
+        console.log(response);
+      })
+      this.route.navigateByUrl("/dashboard/order")
+    }
   }
 }

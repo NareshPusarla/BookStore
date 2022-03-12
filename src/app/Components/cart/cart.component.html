@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="button">
-                <button class="order" ngClass.xs="order-xs" ngClass.sm="order-xs" ngClass.md="order-md" (click)="showDetails()" *ngIf="show">Place Order</button>
+                <button class="order" ngClass.xs="order-xs" ngClass.sm="order-xs" ngClass.md="order-md" (click)="showDetails()" *ngIf="show && cartCount>=1">Place Order</button>
             </div>
             
         </div>
@@ -47,7 +47,7 @@
                         <p style="font-size: 20px;">Customer Details</p>
                         <button>Add New Address</button>
                     </div>
-                    <div class="details">
+                    <div class="details" ngClass.xs="details-xs" ngClass.sm="details-xs">
                         <div class="fullName">
                             <mat-label>Full Name</mat-label>
                             <mat-form-field appearance="outline">
@@ -64,29 +64,35 @@
                             </mat-form-field>
                         </div>
                     </div>
-                    <div class="workAddress">
+                    <div class="workAddress" ngClass.xs="workAddress-xs" ngClass.sm="workAddress-xs">
                         <p class="optionAddress">1.<b>Work</b>Edit</p>
                         <p>Address</p>
-                        <textarea type="text" class="addressInput" formControlName="address"></textarea>
-                        <div class="city">
+                        <textarea type="text" class="addressInput" ngClass.xs="addressInput-xs" ngClass.sm="addressInput-xs" formControlName="address"></textarea>
+                        <div class="city" ngClass.xs="city-xs" ngClass.sm="city-xs">
                             <div class="fullName">
                                 <mat-label>city/town</mat-label>
-                                <input matInput placeholder="City/State" formControlName="city">
+                                <mat-form-field appearance="outline">
+                                    <input matInput placeholder="City/State" formControlName="city">
+                                    <mat-error>Enter City Name</mat-error>
+                                </mat-form-field>
                             </div>
                             
                             <div class="fullName">
                                 <mat-label>state</mat-label>
-                                <input matInput type="text" placeholder="State" formControlName="state">    
+                                <mat-form-field appearance="outline">
+                                    <input matInput type="text" placeholder="State" formControlName="state">    
+                                    <mat-error>Enter State Name</mat-error>
+                                </mat-form-field>
                             </div>
                         </div>
                     </div>
-                    <div class="homeAddress">
+                    <div class="homeAddress" ngClass.xs="homeAddress-xs" ngClass.sm="homeAddress-xs">
                         <p class="optionAddress">2.<b>Home</b></p>
                         <p><b>Address</b></p>
                         <p><b>BridgeLabz Solutions LLP, No.42, 14th Main, 15th Cross, Sector 4, Opp to BDA<br>
                             complex, near Kumarakom restaurant, HSR Layout, Bangalore</b></p>
                     </div>
-                    <button type="submit" value="Next" class="continue" (click)="showOrderDetails()" *ngIf="continue">CONTINUE</button>
+                    <button type="submit" class="continue" (click)="showOrderDetails()">CONTINUE</button>
                 </form>
             </div>
         </div>
@@ -108,7 +114,7 @@
                     </div>
                 </div>
                 <div>
-                    <button class="order" routerLink="/dashboard/order">CHECKOUT</button>
+                    <button class="order1" ngClass.xs="order1-xs" ngClass.sm="order1-xs" (click)="ordersummary()">CHECKOUT</button>
                 </div>
             </div>
         </div>

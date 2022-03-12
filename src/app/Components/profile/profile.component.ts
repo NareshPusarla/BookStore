@@ -8,12 +8,8 @@ import { DataServiceService } from 'src/app/service/dataservice/data-service.ser
 })
 export class ProfileComponent implements OnInit {
 
-  fullName:any;
-
   constructor(private dataService:DataServiceService) { }
 
-  ngOnInit(): void {
-    this.dataService.share1.subscribe(x => this.fullName = x)
-  }
+  ngOnInit(): void {  }
 
 }

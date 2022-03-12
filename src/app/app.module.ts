@@ -15,6 +15,7 @@ import { LoginComponent } from './Components/login/login.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
@@ -53,6 +54,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     FlexLayoutModule,
     MatFormFieldModule,
     MatInputModule,
+    MatRadioModule,
     MatSnackBarModule,
     MatIconModule,
     MatSelectModule,

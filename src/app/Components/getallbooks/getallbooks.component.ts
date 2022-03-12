@@ -51,4 +51,8 @@ export class GetallbooksComponent implements OnInit {
     this.allBooks = this.allBooks.sort((low:any, high:any) => high.discountPrice-low.discountPrice);
   }
 
+  latest(){
+    this.allBooks = this.allBooks.reverse();
+  }
+
 }
