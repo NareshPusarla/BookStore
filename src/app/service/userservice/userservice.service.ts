@@ -7,6 +7,8 @@ import { HttpserviceService } from '../httpservice/httpservice.service';
 })
 export class UserserviceService {
 
+  token:any;
+
   constructor(private httpService:HttpserviceService) { }
 
   userRegister(data:any){
@@ -27,5 +29,4 @@ export class UserserviceService {
     return this.httpService.postData('bookstore_user/login', data, false, header)
   }
 
-  
 }

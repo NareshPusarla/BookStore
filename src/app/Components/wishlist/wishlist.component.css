@@ -2,6 +2,10 @@
     margin: 0 150px;
 }
 
+.container-xs{
+    margin: 0 50px;
+}
+
 .header{
     margin: 15px 0;
 }
@@ -15,12 +19,36 @@
     background-color: #F5F5F5;
 }
 
+.wish_header-xs{
+    width: 150%;
+}
+
+.wish_header-sm{
+    width: 150%;
+}
+
+.wish_header-md{
+    width: 150%;
+}
+
 .book{
     display: flex;
     border: 1px solid rgb(219, 202, 202);
     width: 70%;
     height: auto;
     padding: 30px 30px;
+}
+
+.book-xs{
+    width: 150%;
+}
+
+.book-sm{
+    width: 150%;
+}
+
+.book-md{
+    width: 150%;
 }
 
 .bookinfo{
@@ -37,9 +65,16 @@
     margin-left: 10px;
 }
 
-.status{
-opacity: 0.5;
-margin-left: 600px;
-margin-top: 20px;
-cursor: pointer;
+
+.delete{
+    margin-left: auto;
+}
+
+.status-xs{
+    margin-left: 75px;
+}
+
+.status-sm{
+    /* margin-left: auto; */
+    float: right;
 }

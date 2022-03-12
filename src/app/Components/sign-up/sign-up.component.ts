@@ -54,7 +54,4 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-  send(registerForm:any){
-    this.dataService.sendUserDetails(registerForm.value.fullName.target.value); 
-  }
 }

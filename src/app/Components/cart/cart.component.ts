@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BookserviceService } from 'src/app/service/bookservice/bookservice.service';
+import { DataServiceService } from 'src/app/service/dataservice/data-service.service';
+import { UserserviceService } from 'src/app/service/userservice/userservice.service';
 
 @Component({
   selector: 'app-cart',
@@ -22,9 +25,10 @@ export class CartComponent implements OnInit {
   showSummeryDetails:boolean = false;
   summery:boolean = true;
 
-  customerForm! : FormGroup;
+  customerForm!:FormGroup;
+  submitted = false;
 
-  constructor(private bookService:BookserviceService, private formbuilder: FormBuilder) { }
+  constructor(private bookService:BookserviceService, private userService:UserserviceService, private formbuilder: FormBuilder, private snackBar: MatSnackBar, private dataService:DataServiceService) { }
 
   ngOnInit(): void {
     this.getItems();
@@ -35,6 +39,30 @@ export class CartComponent implements OnInit {
       city: ['', Validators.required],
       state: ['', Validators.required],
     })
+
+    // this.dataService.sendUserDetails(this.customerForm.value.);
+  }
+
+  onSubmit(){
+    this.submitted = true;
+    if (this.customerForm.valid) {
+        console.log("valid data", this.customerForm.value);
+        let data={
+          addressType: "Home",
+          fullAddress: this.customerForm.value.address,
+          city: this.customerForm.value.city,
+          state: this.customerForm.value.state
+        }
+        this.bookService.customerDetails(data).subscribe((response:any)=>{
+          console.log(response);
+          this.snackBar.open('address details saved','dismiss', {duration:3000});
+        }, (error: any) =>{
+          console.log(error);
+        })
+    } else {
+      console.log("Fill the address details");
+    }
+
   }
 
   getItems(){
@@ -42,6 +70,8 @@ export class CartComponent implements OnInit {
       console.log(res);
       this.cartBookData = res.result;
       this.cartCount = res.result.length;
+      console.log("cart book data", this.cartBookData);
+      
     }, error=>{
       console.log(error); 
     })
@@ -95,7 +125,8 @@ export class CartComponent implements OnInit {
   }
 
   showOrderDetails(){
-    if(this.showSummeryDetails == false){
+
+    if(this.showSummeryDetails == false && this.customerForm.valid){
       this.showSummeryDetails = true
       this.summery = false;
     }

@@ -1,20 +1,20 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
 
 <div>
-    <div class="container">
-        <div class="header">
+    <div class="container" fxLayout="column" ngClass.sm="container-sm">
+        <div class="header" fxLayout="column">
             <p>Home/<b>Book({{bookInfo?.quantity}})</b></p>
         </div>
-        <div class="description">
-            <div class="sampleimg">
+        <div class="description" fxLayout="row">
+            <div class="sampleimg" fxLayout="column">
                 <img src="../../../assets/Image 1.png" alt="">
                 <img src="../../../assets/Image 46.png" alt="">
             </div>
-            <div>
-                <div class="book">
+            <div fxLayout="column">
+                <div class="book" fxLayout="column">
                     <img src="../../../assets/Image 11@2x.png" alt="">
                 </div>
-                <div class="options"> 
+                <div class="options" fxLayout="row"> 
                     <div>
                         <button id="bag" (click)="addToBag()" *ngIf="showBag">ADD TO BAG</button>
                     </div>
@@ -33,14 +33,15 @@
                     </div>
                 </div>
             </div>
-            <div class="book_info">
-                <div class="book_data">
+            <div class="book_info"  fxLayout="column">
+                <div class="book_data"  fxLayout="column">
                     <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;"><b>{{bookInfo?.bookName}}</b></div>
                     <div style="font-size: 14px; color: rgb(187, 187, 183); margin-bottom: 5px;">by {{bookInfo?.author}}</div>
                     <div class="rating">
-                        4.5
-                        <img src="../../../assets/star_outline_white_24dp.svg" alt="" class="star">
-                        <p>({{bookInfo?.quantity}})</p>
+                        <p class="p2">4.5</p>
+                        <!-- <img src="../../../assets/star_outline_white_24dp.svg" alt="" class="star"> -->
+                        <mat-icon class="star">star</mat-icon>
+                        <p class="p1">({{bookInfo?.quantity}})</p>
                     </div>
                     <div class="cost">
                         <p><b>Rs.{{bookInfo?.discountPrice}}</b></p>
@@ -48,16 +49,16 @@
                     </div>
                 </div>
                 <hr>
-                <div>
+                <div fxLayout="column">
                     <ul>
                         <li>Book Detail</li>
                     </ul> 
                 </div>
-                <div class="book_detail">
+                <div class="book_detail" fxLayout="column">
                     <p>{{bookInfo ?. description}}</p>
                 </div>
                 <hr>
-                <div>
+                <div fxLayout="column">
                     <div class="customerfeedback">
                         <span>Customer Feedback</span>
                     </div>

@@ -69,6 +69,17 @@ export class BookserviceService {
     return this.httpService.deleteData('bookstore_user/remove_cart_item/'+id, {}, true, header)
   }
 
+  customerDetails(data:any){
+    let header={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'x-access-token': this.token,
+      })
+
+    }
+    return this.httpService.putData('bookstore_user/edit_user', data, true, header)
+  }
+
   addWishList(id:any){
     let header={
       headers:new HttpHeaders({
