@@ -33,6 +33,7 @@ export class WishlistComponent implements OnInit {
     }, error=>{
       console.log(error); 
     })
+    this.getWishlistItems();
     location.reload();
   }
 }

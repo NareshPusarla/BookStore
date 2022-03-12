@@ -5,6 +5,10 @@
     padding-bottom: 100px;
 }
 
+.container-xs{
+    margin-left: 100px;
+}
+
 .header{
     margin-top: 20px;
 }
@@ -97,7 +101,19 @@
     margin-top: 10px;
 }
 
-.type label{
-    margin-right: 50px;
+.type mat-radio-button{
+    margin-right: 20px;
+}
+
+.type-xs mat-radio-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.type-sm mat-radio-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 

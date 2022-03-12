@@ -40,3 +40,17 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Gave navigation for the users who forgot email and to update the email.
 -![This is image]("../assets/reference/login.png")
 
+## Dashboard:
+- Here this our header for whole application with features search the book, to check cart items and to check our profile.
+- Here provided navigations as per the feature.
+-![This is image]("../assets/reference/dashboard.png")
+
+## Get All Books:
+- Here we are designing how to be our books arrangement, along with that we sorting order on what we basis we want to list our books.
+Ex: Low to High, High to Low, Newest arrivals first.
+- We gave page slide bar to go to particular page.
+
+## Quick View:
+- We can view a particular book data and provided cart, wishlist options also.
+- So to navigate to this view page we provided a navigation link by clicking on a particular book it navigate to that book data.
+- 
