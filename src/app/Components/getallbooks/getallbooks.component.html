@@ -1,11 +1,11 @@
-<div class="body">
-    <div class="container">
-        <div class="header">
-            <div class="books_count">
+<div class="body" fxLayout="column">
+    <div class="container" fxLayout="column" ngClass.sm="container-sm" ngClass.md="container-md">
+        <div class="header" fxLayout="row">
+            <div class="books_count" fxLayout="row">
                 <p id="books" style="font-size: 22px; margin-top: 13px;">Books</p>
                 <p id="count" style="font-size: 12px; margin: 16px 0 0 5px;">({{numberOfBooks}} items)</p>
             </div>
-            <div class="sort">
+            <div class="sort" fxLayout="row">
                 <mat-form-field appearance="outline">
                     <mat-label>Sort by relevance</mat-label>
                     <mat-select>
@@ -15,8 +15,8 @@
                 </mat-form-field>
             </div>
         </div>
-        <div class="books_list">
-            <div class="book" *ngFor="let book of allBooks | filter:filteredString">
+        <div class="books_list" fxLayout="row">
+            <div class="book" *ngFor="let book of allBooks | filter:filteredString | paginate: { itemsPerPage: 8, currentPage: page}">
                 <div class="book_image" (click)="quickview(book)">
                     <img src="../../../assets/Image 11.png" alt="">
                 </div>
@@ -24,9 +24,9 @@
                     <div><b>{{book.bookName}}</b></div>
                     <div>by {{book.author}}</div>
                     <div class="rating">
-                        <p>4.5</p>
-                        <img src="../../../assets/star_outline_white_24dp.svg" alt="" class="star">
-                        <p style="color: black; margin-left: 5px;">({{book.quantity}})</p>
+                        <p style="margin-top: 2px;margin-left: 3px;font-size: 17px;">4.5</p>
+                        <img src="../../../assets/white-star-icon-png-11.jpg" alt="" class="star">
+                        <p style="color: black; margin-left: 5px; margin-top: 2px;">({{book.quantity}})</p>
                     </div>
                     <div class="cost">
                         <p><b>Rs. {{book.discountPrice}}</b></p>
@@ -35,5 +35,8 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="pagination" fxLayout="column" fxLayoutAlign="center center">
+        <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
     </div>
 </div>

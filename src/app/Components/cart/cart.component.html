@@ -1,12 +1,12 @@
 <div>
-    <div class="container">
-        <div class="header">
+    <div class="container" fxLayout="column" ngClass.xs="container-xs" ngClass.sm="container-xs">
+        <div class="header"  fxLayout="row">
             <p>Home/ My cart</p>
         </div>
-        <div class="items">
-            <div class="items_header">
+        <div class="items" fxLayout="column" ngClass.xs="items-xs">
+            <div class="items_header" fxLayout.xs="column">
                 <div>My cart({{cartCount}})</div>
-                <div class="location">
+                <div class="location" ngClass.xs="location-xs">
                     <mat-form-field appearance="outline">
                         <mat-label><b>Use current loaction</b></mat-label>
                         <mat-select>
@@ -33,16 +33,16 @@
                         <p (click)="removeCartItem(book)">Remove</p>
                     </div>
                 </div>
-                <div class="button">
-                    <button class="order" (click)="showDetails()" *ngIf="show">Place Order</button>
-                </div>
+            </div>
+            <div class="button">
+                <button class="order" ngClass.xs="order-xs" ngClass.sm="order-xs" ngClass.md="order-md" (click)="showDetails()" *ngIf="show">Place Order</button>
             </div>
             
         </div>
-        <div class="address">
+        <div class="address" fxLayout="column" ngClass.xs="address-xs">
             <p style="font-size: 15px;" *ngIf="address">AddressDetails</p>
             <div *ngIf="showCustomerDetails" class="customeraddress">
-                <form [formGroup]="customerForm">
+                <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
                     <div class="customerHeader">
                         <p style="font-size: 20px;">Customer Details</p>
                         <button>Add New Address</button>
@@ -59,7 +59,7 @@
                         <div class="fullName">
                             <mat-label>Mobile Number</mat-label>
                             <mat-form-field appearance="outline">
-                                <input matInput type="password" placeholder="Mobile Number" formControlName="mobileNumber">
+                                <input matInput type="text" placeholder="Mobile Number" formControlName="mobileNumber">
                                 <mat-error>Enter Mobile Number</mat-error>
                             </mat-form-field>
                         </div>
@@ -86,11 +86,11 @@
                         <p><b>BridgeLabz Solutions LLP, No.42, 14th Main, 15th Cross, Sector 4, Opp to BDA<br>
                             complex, near Kumarakom restaurant, HSR Layout, Bangalore</b></p>
                     </div>
-                    <button class="continue" (click)="showOrderDetails()" *ngIf="continue">CONTINUE</button>
+                    <button type="submit" value="Next" class="continue" (click)="showOrderDetails()" *ngIf="continue">CONTINUE</button>
                 </form>
             </div>
         </div>
-        <div class="summary">
+        <div class="summary" fxLayout="column" ngClass.xs="summary-xs">
             <p *ngIf="summery">Order Summery</p>
             <div *ngIf="showSummeryDetails" class="showSummrey">
                 <p style="font-size: 20px; margin-bottom: 20px;">Order Summery</p>

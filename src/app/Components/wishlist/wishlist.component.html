@@ -1,12 +1,12 @@
 <div>
-    <div class="container">
-        <div class="header">
+    <div class="container" fxLayout="column" ngClass.xs="container-xs">
+        <div class="header" fxLayout="column">
             <p>Home / My wishlist</p>
         </div>
-        <div class="wish_header">
+        <div class="wish_header" fxLayout="column" ngClass.xs="wish_header-xs" ngClass.sm="wish_header-sm"  ngClass.md="wish_header-md">
             <p><b>My Wishlist ({{wishListCount}})</b></p>
         </div>
-        <div class="book" *ngFor="let book of wishListData">
+        <div class="book" fxLayout="row" *ngFor="let book of wishListData" ngClass.xs="book-xs" ngClass.sm="book-sm" ngClass.md="book-md">
             <div class="bookImg"><img src="../../../assets/Image 1@2x.png" alt=""></div>
             <div class="bookinfo">
                 <div style="font-size: 20px; color: rgb(77, 77, 74); margin-bottom: 5px;">{{book.product_id.bookName}}</div>
@@ -16,8 +16,8 @@
                     <p><s>Rs.{{book.product_id.price}}</s></p>
                 </div>
             </div>
-            <div>
-                <img src="../../../assets/delete_black_24dp.svg" alt="" class="status" (click)="removeWishListItem(book)">
+            <div class="delete" fxLayout="column">
+                <img src="../../../assets/delete_black_24dp.svg" alt="" class="status" ngClass.xs="status-xs" ngClass.sm="status-sm" (click)="removeWishListItem(book)">
             </div>
         </div>
     </div>

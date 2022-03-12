@@ -14,6 +14,7 @@ export class GetallbooksComponent implements OnInit {
   numberOfBooks:any;
 
   filteredString = "";
+  page:number = 1;
   
   constructor(private bookservice:BookserviceService, private router:Router, private dataService:DataServiceService) { }
 

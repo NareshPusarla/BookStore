@@ -4,6 +4,10 @@
     padding-bottom: 100px;
 }
 
+.container-xs{
+    margin-left: 100px;
+}
+
 .header{
     margin: 15px 0;
 }
@@ -15,6 +19,11 @@
     padding: 10px 30px;
 }
 
+.items-xs{
+    width: 150%;
+    padding: 10px 10px;
+}
+
 .items_header{
     display: flex;
     margin: 10px 0;
@@ -22,6 +31,10 @@
 
 .location{
     margin-left: auto;
+}
+
+.location-xs{
+    margin-left: 0px;
 }
 
 .book{
@@ -71,19 +84,23 @@
     cursor: pointer;
 }
 
-.button{
- margin-left: auto;
-}
-
 .order{
+    margin-left: 800px;
     background-color: rgb(61, 61, 255);
     color: #fff;
     border: none;
     font-size: 15px;
     height: 30px;
     width: 100px;
-    margin-top: 125px;
     cursor: pointer;
+}
+
+.order-xs{
+    margin-left: 0px;
+}
+
+.order-md{
+    float:right;
 }
 
 .address{
@@ -93,6 +110,10 @@
     height: auto;
     padding: 20px 30px;
     margin: 20px 0px;
+}
+
+.address-xs{
+    width: 150%;
 }
 
 .customeraddress{
@@ -183,6 +204,10 @@
     height: auto;
     padding: 20px 30px;
     margin-bottom: 50px;
+}
+
+.summary-xs{
+    width: 150%;
 }
 
 .showSummrey{

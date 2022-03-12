@@ -15,6 +15,7 @@
 .description{
     display: flex;
 }
+
 .book{
     margin: 20px 0 0 0px;
     border: 2px solid rgb(219, 202, 202);
@@ -87,24 +88,31 @@
 }
 
 .rating{
-    width: 45px;
-    height: 20px;
+    width: 53px;
+    height: 25px;
     background-color: green;
     color: #fff;
     margin-bottom: 15px;
     display: flex;
     padding-left: 10px;
+    text-align: center;
 }
 
-.rating p{
+.rating .p1{
     color: rgb(187, 187, 183);
-    margin-left: 15px;
+    margin-left: 10px;
+    font-size: 17px;
+}
+
+.p2{
+    font-size: 18px;
+    margin-top: 4px;
 }
 
 .star{
     margin-top: 0px;
     margin-left: 3px;
-    height: 18px;
+    /* height: 5px; */
 }
 
 .cost{
