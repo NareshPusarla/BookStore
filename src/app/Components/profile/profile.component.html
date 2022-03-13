@@ -1,7 +1,8 @@
 <div>
     <div class="container" fxLayout="column" ngClass.xs="container-xs">
-        <div class="header" fxLayout="column">
+        <div class="header" fxLayout="row" ngClass.xs="header-xs">
             <p>Home/ <b>Profile</b></p>
+            <button class="logout" ngClass.xs="logout-xs" (click)="logout()">Logout</button>
         </div>
         <div class="profileInfo" fxLayout="column">
             <div class="personal">
