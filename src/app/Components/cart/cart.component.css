@@ -243,7 +243,16 @@
 }
 
 .order1{
-    margin-left: auto;
+    float: right;
+    background-color: rgb(61, 61, 255);
+    color: #f5f3f3;
+    border: none;
+    border-radius: 2px;
+    font-size: 15px;
+    height: 30px;
+    width: 150px;
+    cursor: pointer;
+
 }
 
 .order1-xs{

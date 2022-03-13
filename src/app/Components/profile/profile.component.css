@@ -13,6 +13,10 @@
     margin-top: 20px;
 }
 
+.header-xs{
+    margin-bottom: 10px;
+}
+
 .personal{
     display: flex;
     gap: 10px;
@@ -117,3 +121,18 @@
     gap: 10px;
 }
 
+.logout{
+    margin-left: auto;
+    width: 100px;
+    background-color: rgb(61, 61, 255);
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.logout-xs{
+    width: 100px;
+    height: 40px;
+}
