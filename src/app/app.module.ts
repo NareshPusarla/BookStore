@@ -20,7 +20,6 @@ import {NgxPaginationModule} from 'ngx-pagination';
 
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { GetallbooksComponent } from './Components/getallbooks/getallbooks.component';
-import { ForgotpasswordComponent } from './Components/forgotpassword/forgotpassword.component';
 import { QuickviewComponent } from './Components/quickview/quickview.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
@@ -36,7 +35,6 @@ import { FilterPipe } from './pipes/filter.pipe';
     LoginComponent,
     DashboardComponent,
     GetallbooksComponent,
-    ForgotpasswordComponent,
     QuickviewComponent,
     CartComponent,
     WishlistComponent,

@@ -82,7 +82,7 @@ export class CartComponent implements OnInit {
       let data = {
         "quantityToBuy":this.bookQuantity
       }
-      this.bookService.cartItemQuantity(book.product_id._id, data).subscribe((res:any)=>{
+      this.bookService.cartItemQuantity(book.product_id?._id, data).subscribe((res:any)=>{
         console.log("adding to card of this bookId", this.bookQuantity);
       }, error=>{
         console.log(error);
@@ -96,7 +96,7 @@ export class CartComponent implements OnInit {
       let data = {
         "quantityToBuy":this.bookQuantity
       }
-      this.bookService.cartItemQuantity(book.product_id._id, data).subscribe((res:any)=>{
+      this.bookService.cartItemQuantity(book.product_id?._id, data).subscribe((res:any)=>{
         console.log("adding to card of this bookId", this.bookQuantity);
       }, error=>{
         console.log(error);
