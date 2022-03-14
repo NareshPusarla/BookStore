@@ -7,6 +7,7 @@ import { DataServiceService } from 'src/app/service/dataservice/data-service.ser
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  target: any;
 
   constructor(private dataService:DataServiceService) { }
 
