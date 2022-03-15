@@ -46,8 +46,4 @@ describe('QuickviewComponent', () => {
     expect(component.minus).toBeTruthy();
   });
 
-  // it('plus', () => {
-  //   component.plus()
-  //   expect(component.plus).toBeTruthy();
-  // });
 });

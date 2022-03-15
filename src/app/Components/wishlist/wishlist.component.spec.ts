@@ -29,10 +29,5 @@ describe('WishlistComponent', () => {
     component.getWishlistItems()
     expect(component.getWishlistItems).toBeTruthy();
   });
-
-  // it('removeWishListItem', () => {
-  //   component.removeWishListItem(book)
-  //   expect(component.removeWishListItem).toBeTruthy();
-  // });
   
 });
