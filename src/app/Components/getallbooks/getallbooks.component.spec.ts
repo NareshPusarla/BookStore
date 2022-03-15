@@ -36,11 +36,6 @@ describe('GetallbooksComponent', () => {
     expect(component.getNotes).toBeTruthy();
   });
 
-  // it('quickview', () => {
-  //   component.quickview(book)
-  //   expect(component.quickview).toBeTruthy();
-  // });
-
   it('low', () => {
     component.low()
     expect(component.low).toBeTruthy();
