@@ -11,32 +11,35 @@ import { CartComponent } from './Components/cart/cart.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import { OrderPlacedComponent } from './Components/order-placed/order-placed.component';
 import { ProfileComponent } from './Components/profile/profile.component';
+import { AdminBookComponent } from './Components/admin-book/admin-book.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'dashboard/books', pathMatch:'full'},
-  {path:'signup',component:SignUpComponent},
-  {path:'login',component:LoginComponent},
-  {path:'books',component:GetallbooksComponent},
-  {path:'cart',component:CartComponent},
-  {path:'wishlist',component:WishlistComponent},
-  {path:'view/:id',component:QuickviewComponent},
-  {path:'order',component:OrderPlacedComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'dashboard',component:DashboardComponent,
+  {path:'signup', component:SignUpComponent},
+  {path:'login', component:LoginComponent},
+  {path:'adminBook', component:AdminBookComponent},
+  {path:'books', component:GetallbooksComponent},
+  {path:'cart', component:CartComponent},
+  {path:'wishlist', component:WishlistComponent},
+  {path:'view/:id', component:QuickviewComponent},
+  {path:'order', component:OrderPlacedComponent},
+  {path:'profile', component:ProfileComponent},
+  {path:'dashboard', component:DashboardComponent,
     children:[
-              {path:'books',component:GetallbooksComponent},
-              {path:'view/:id',component:QuickviewComponent},
-              {path:'cart',component:CartComponent},
-              {path:'wishlist',component:WishlistComponent},
-              {path:'order',component:OrderPlacedComponent},
-              {path:'profile',component:ProfileComponent},
+              {path:'books', component:GetallbooksComponent},
+              {path:'view/:id', component:QuickviewComponent},
+              {path:'cart', component:CartComponent},
+              {path:'wishlist', component:WishlistComponent},
+              {path:'order', component:OrderPlacedComponent},
+              {path:'profile', component:ProfileComponent},
+              {path:'adminBook', component:AdminBookComponent},
     ],
     canActivate:[AuthserviceGuard]
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

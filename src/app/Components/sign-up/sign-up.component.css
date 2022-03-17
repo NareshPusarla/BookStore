@@ -41,6 +41,10 @@ form{
 form mat-form-field{
     width: 100%;
 }
+
+.type mat-radio-button{
+    padding-right: 50px;
+}
   
 .switch{
     display: flex;
@@ -64,7 +68,7 @@ form mat-form-field{
     width: 40%;
     width: 40%;
     border: none;
-    background-color: #f91f1f;
+    background-color: #A03037;
     height: 3px;
     margin-top: -20px;
     transform: translateX(100px);
@@ -74,7 +78,7 @@ form mat-form-field{
     width: 100%;
     color: white;
     font-size: 18px;
-    background: #f91f1f;
+    background: #A03037;
     height: 40px;
     position: relative;
     border-radius: 5px;

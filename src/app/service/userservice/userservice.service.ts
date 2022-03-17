@@ -8,25 +8,29 @@ import { HttpserviceService } from '../httpservice/httpservice.service';
 export class UserserviceService {
 
   token:any;
+  header:any;
 
-  constructor(private httpService:HttpserviceService) { }
-
-  userRegister(data:any){
-    let header={
+  constructor(private httpService:HttpserviceService) { 
+    this.header={
       headers:new HttpHeaders({
         'Content-Type':'application/json'
       })
     }
-    return this.httpService.postData('bookstore_user/registration', data, false, header)
+  }
+
+  userRegister(data:any){ 
+    return this.httpService.postData('bookstore_user/registration', data, false, this.header)
   }
 
   userLogin(data:any){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json'
-      })
-    }
-    return this.httpService.postData('bookstore_user/login', data, false, header)
+    return this.httpService.postData('bookstore_user/login', data, false, this.header)
   }
 
+  adminRegister(data:any){
+    return this.httpService.postData('bookstore_user/admin/registration', data, false, this.header)
+  }
+
+  adminLogin(data:any){
+    return this.httpService.postData('bookstore_user/admin/login', data, false, this.header)
+  }
 }

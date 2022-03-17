@@ -4,10 +4,15 @@
   </div>
   <div fxLayout="row">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="type">
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button (click)="admin()" value="admin">Admin</mat-radio-button>
+          <mat-radio-button (click)="user()" value="user">User</mat-radio-button>
+        </mat-radio-group>
+      </div>
       <div class="switch">
         <button (click)="go()">Login</button>
         <button>SignUp</button>
-        
       </div>
       <hr id="indicator">
       <div fxLayout="column" class="user-name"> 

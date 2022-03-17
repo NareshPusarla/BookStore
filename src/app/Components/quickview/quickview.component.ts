@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BookserviceService } from 'src/app/service/bookservice/bookservice.service';
+import { DataServiceService } from 'src/app/service/dataservice/data-service.service';
 
 @Component({
   selector: 'app-quickview',
@@ -9,17 +10,24 @@ import { BookserviceService } from 'src/app/service/bookservice/bookservice.serv
 })
 export class QuickviewComponent implements OnInit {
 
-  cartQuantity:number = 1;
+  cartQuantity:number = 0;
   showButton:boolean = false;
   showBag:boolean = true;
   bookId:any;
   bookInfo:any;
 
-  constructor( private bookservice:BookserviceService, private route: ActivatedRoute) { }
+  feedback:any;
+  value:any;
+  feedbackList:any;
+
+  constructor( private bookservice:BookserviceService, private dataService:DataServiceService, private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.getBookDetail();
-    this.bookId = this.route.snapshot.params['id'];
+    
+    this.bookId = this.route.snapshot.params['id']; 
+    console.log("book id", this.bookId);
+    this.getFeedback();
   }
 
   getBookDetail(){
@@ -36,6 +44,8 @@ export class QuickviewComponent implements OnInit {
   }
 
   addToBag(){
+    this.cartQuantity++;
+    this.sendCartQuantity(this.cartQuantity);
     this.showButton = true;
     this.showBag = false;
     this.bookservice.addCartItem(this.bookId).subscribe((res:any)=>{
@@ -54,8 +64,9 @@ export class QuickviewComponent implements OnInit {
   }
 
   minus(){
-    if(this.cartQuantity != 1){
-      this.cartQuantity--;
+    this.cartQuantity--;
+    if(this.cartQuantity >= 1){
+      this.sendCartQuantity(this.cartQuantity);
       let data = {
         "quantityToBuy": this.cartQuantity
       }
@@ -66,14 +77,16 @@ export class QuickviewComponent implements OnInit {
       })
     }
     else{
+      this.sendCartQuantity(this.cartQuantity);
       this.showButton = false;
       this.showBag = true;
     }
   }
 
   plus(){
-    if(this.cartQuantity){
+    if(this.cartQuantity >= 1){
       this.cartQuantity++;
+      this.sendCartQuantity(this.cartQuantity);
       let data = {
         "quantityToBuy": this.cartQuantity
       }
@@ -85,4 +98,26 @@ export class QuickviewComponent implements OnInit {
     }
   }
 
+  addFeedback(){
+    let data= {
+      comment: this.feedback,
+      rating: this.value
+    }
+    this.bookservice.addFeedback(this.bookId, data).subscribe((res:any)=>{
+      console.log(res);
+      
+    })
+  }
+
+  getFeedback(){
+    console.log("feedback list",this.bookId);
+    this.bookservice.getFeedback(this.bookId).subscribe((res:any)=>{
+      console.log("feedback list",res.result);
+      this.feedbackList = res.result;
+    })
+  }
+
+  sendCartQuantity(cartQuantity:any){
+    this.dataService.sendData(cartQuantity);
+  }
 }

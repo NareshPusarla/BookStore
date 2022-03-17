@@ -8,117 +8,77 @@ import { HttpserviceService } from '../httpservice/httpservice.service';
 export class BookserviceService {
 
   token:any;
+  header:any;
   constructor(private httpService:HttpserviceService) {
     this.token=localStorage.getItem('token')
+    this.header={
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        'x-access-token': this.token,
+      })
+    }
   } 
 
   getBooks(){
     console.log("token === ",this.token);
-    
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-
-    }
-    return this.httpService.getData('bookstore_user/get/book', true, header)
+    return this.httpService.getData('bookstore_user/get/book', true, this.header)
   }
 
   addCartItem(id:any){
-    console.log("token === ",this.token);
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-    }
-    return this.httpService.postData('bookstore_user/add_cart_item/'+id, {}, true, header)
+    return this.httpService.postData('bookstore_user/add_cart_item/'+id, {}, true, this.header)
   }
 
   getCartItem(){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-
-    }
-    return this.httpService.getData('bookstore_user/get_cart_items', true, header)
+    return this.httpService.getData('bookstore_user/get_cart_items', true, this.header)
   }
 
   cartItemQuantity(id:any, data:any){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-
-    }
-    return this.httpService.putData('bookstore_user/cart_item_quantity/'+id, data, true, header)
+    return this.httpService.putData('bookstore_user/cart_item_quantity/'+id, data, true, this.header)
   }
 
   removeCartItemQuantity(id:any){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-
-    }
-    return this.httpService.deleteData('bookstore_user/remove_cart_item/'+id, {}, true, header)
+    return this.httpService.deleteData('bookstore_user/remove_cart_item/'+id, {}, true, this.header)
   }
 
   customerDetails(data:any){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-
-    }
-    return this.httpService.putData('bookstore_user/edit_user', data, true, header)
+    return this.httpService.putData('bookstore_user/edit_user', data, true, this.header)
   }
 
   orderCheckout(data:any){
-    let header= {
-      headers: new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token':this.token
-      })
-    }
-   return this.httpService.postData('bookstore_user/add/order',data, true,header ) 
+   return this.httpService.postData('bookstore_user/add/order',data, true, this.header ) 
    }
 
   addWishList(id:any){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-    }
-    return this.httpService.postData('bookstore_user/add_wish_list/'+id, {}, true, header)
+    return this.httpService.postData('bookstore_user/add_wish_list/'+id, {}, true, this.header)
   }
 
   getWishlistItem(){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
-
-    }
-    return this.httpService.getData('bookstore_user/get_wishlist_items', true, header)
+    return this.httpService.getData('bookstore_user/get_wishlist_items', true, this.header)
   }
 
   removeItemWishlist(id:any){
-    let header={
-      headers:new HttpHeaders({
-        'Content-Type':'application/json',
-        'x-access-token': this.token,
-      })
+    return this.httpService.deleteData('bookstore_user/remove_wishlist_item/'+id, {}, true, this.header)
+  }
 
-    }
-    return this.httpService.deleteData('bookstore_user/remove_wishlist_item/'+id, {}, true, header)
+  addFeedback(id:any, data:any){
+    return this.httpService.postData('bookstore_user/add/feedback/'+id, data, true, this.header)
+  }
+
+  getFeedback(id:any){
+    return this.httpService.getData('bookstore_user/get/feedback/'+id, true, this.header)
+  }
+
+  addAdminBook(data:any){
+    return this.httpService.postData('bookstore_user/admin/add/book', data, true, this.header)
+  }
+
+  updateAdminBook(data:any, id:any){
+    return this.httpService.putData('bookstore_user/admin/update/book/'+id, data, true, this.header)
+  }
+
+  deleteAdminBook(id:any){
+    return this.httpService.deleteData('bookstore_user/admin/update/book/'+id, {}, true, this.header)
   }
 }
+
+

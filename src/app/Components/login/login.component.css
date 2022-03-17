@@ -26,6 +26,10 @@
     border-radius: 10px;
 }
 
+.type mat-radio-button{
+    padding-right: 50px;
+}
+
 .switch{
     display: flex;
     justify-content: center;
@@ -48,7 +52,7 @@
     margin-left: 130px;
     width: 40%;
     border: none;
-    background-color: #f91f1f;
+    background-color: #A03037;
     height: 3px;
     margin-top: -20px;
     transform: translateX(-100px);
@@ -92,7 +96,7 @@ a{
     width: 100%;
     color: white;
     font-size: 18px;
-    background: #f91f1f;
+    background: #A03037;
     height: 40px;
     position: relative;
     border-radius: 5px;
@@ -102,6 +106,7 @@ a{
 .or{
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .product{

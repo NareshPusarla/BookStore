@@ -14,4 +14,8 @@ export class DataServiceService {
   updateData(text:any){
     this.content.next(text);
   }
+
+  sendData(text:any){
+    this.content.next(text);
+  }
 }
