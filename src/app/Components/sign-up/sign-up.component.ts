@@ -16,6 +16,8 @@ export class SignUpComponent implements OnInit {
   submitted = false;
   hide:boolean = true;
 
+  category:any;
+
   constructor(private formBuilder: FormBuilder, private userService:UserserviceService, private route:Router, private snackBar: MatSnackBar, private dataService:DataServiceService) {}
 
   ngOnInit():void {
@@ -32,6 +34,16 @@ export class SignUpComponent implements OnInit {
     this.route.navigate(['/login'])
   }
 
+  admin(){
+    this.category = true;
+    console.log("category", this.category);
+  }
+
+  user(){
+    this.category = false;
+    console.log("category", this.category);
+  }
+
   onSubmit(){
     this.submitted = true;
     if (this.registerForm.valid) {
@@ -43,12 +55,22 @@ export class SignUpComponent implements OnInit {
           phone:this.registerForm.value.mobileNumber,
           service:this.registerForm.value.service
         }
-        this.userService.userRegister(data).subscribe((response:any)=>{
-          console.log(response);
-          this.snackBar.open('registration done','dismiss', {duration:3000});
-        }, (error: any) =>{
-          console.log(error);
-        })
+        if(this.category == true){
+          this.userService.adminRegister(data).subscribe((response:any)=>{
+            console.log(response);
+            this.snackBar.open('admin registration done','dismiss', {duration:3000});
+          }, (error: any) =>{
+            console.log(error);
+          })
+        }
+        else if(this.category == false){
+          this.userService.userRegister(data).subscribe((response:any)=>{
+            console.log(response);
+            this.snackBar.open('user registration done','dismiss', {duration:3000});
+          }, (error: any) =>{
+            console.log(error);
+          })
+        }
     } else {
       console.log("invalid");
     }

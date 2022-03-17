@@ -17,8 +17,8 @@
             <p style="font-size: 13px;">Profile</p>
         </div>
         <div class="cart" routerLink="/dashboard/cart" fxLayout="column">
-            <img src="../../../assets/supermarket.svg" alt="">
-            <p style="font-size: 13px;">Cart</p>
+            <span matBadge={{badgeCount}} matBadgePosition="after" matBadgeColor="warn" [matBadgeHidden]="badgeCount==0"><img src="../../../assets/supermarket.svg" alt=""></span>
+            <p>Cart</p>
         </div>
     </div>
 </div>

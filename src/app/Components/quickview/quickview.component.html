@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
 <div>
     <div class="container" fxLayout="column" ngClass.sm="container-sm">
         <div class="header" fxLayout="row">
@@ -62,26 +64,44 @@
                     </div>
                     <div class="review_box">
                         <p>Overall Rating</p>
-                        <div class="starcontainer">
+                        <div class="starContainer">
                             <div class="star-widget">
-                              <input type="radio" name="rate" id="rate-5">
-                              <label for="rate-5" class="fas fa-star"></label>
-                              <input type="radio" name="rate" id="rate-4">
-                              <label for="rate-4" class="fas fa-star"></label>
-                              <input type="radio" name="rate" id="rate-3">
-                              <label for="rate-3" class="fas fa-star"></label>
-                              <input type="radio" name="rate" id="rate-2">
-                              <label for="rate-2" class="fas fa-star"></label>
-                              <input type="radio" name="rate" id="rate-1">
-                              <label for="rate-1" class="fas fa-star"></label>
-                              <form action="#">
-                                <div class="textarea">
-                                  <textarea cols="30" placeholder="write your review..."></textarea>
-                                </div>
-                                <div class="btn">
-                                  <button type="submit">Submit</button>
-                                </div>
-                              </form>
+                                <input type="radio" name="rate" id="rate-5" [(ngModel)]="value" value="5">
+                                <label for="rate-5" class="fas fa-star"></label>
+
+                                <input type="radio" name="rate" id="rate-4" [(ngModel)]="value" value="4">
+                                <label for="rate-4" class="fas fa-star"></label>
+
+                                <input type="radio" name="rate" id="rate-3" [(ngModel)]="value" value="3">
+                                <label for="rate-3" class="fas fa-star"></label>
+
+                                <input type="radio" name="rate" id="rate-2" [(ngModel)]="value" value="2">
+                                <label for="rate-2" class="fas fa-star"></label>
+
+                                <input type="radio" name="rate" id="rate-1" [(ngModel)]="value" value="1">
+                                <label for="rate-1" class="fas fa-star"></label>
+                            </div> 
+
+                        </div>
+                        <div class="textarea">
+                            <textarea [(ngModel)]="feedback" cols="30" type="text" placeholder="write your review..."></textarea>
+                        </div>
+                        <div class="btn">
+                            <button type="submit" (click)="addFeedback()">Submit</button>
+                        </div>
+                    </div>
+                    <div class="feedback" *ngFor="let feedback of feedbackList">
+                        <div>
+                            <div class="feedback_name">
+                                <span style="color: black; font-size: 15px;">{{feedback.user_id.fullName}} </span>
+                            </div>
+
+                            <div>
+                                <span>{{feedback.rating}} </span>
+                            </div>
+
+                            <div class="feedback_comment">
+                                <span style="color: rgb(121, 119, 119); font-size: 13px;">{{feedback.comment}} </span>
                             </div>
                         </div>
                     </div>
