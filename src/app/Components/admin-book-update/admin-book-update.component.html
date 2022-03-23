@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card-title>
+        <input matInput type="text" placeholder="Book Name" [(ngModel)]="bookName">
+    </mat-card-title>
+  
+    <mat-card-title>
+        <input matInput type="text" placeholder="Author" [(ngModel)]="author">
+    </mat-card-title>
+
+    <mat-card-title>
+        <textarea type="text" placeholder="Description" [(ngModel)]="description"></textarea>
+    </mat-card-title>
+  
+    <mat-card-title>
+        <input matInput type="text" placeholder="Quantity" [(ngModel)]="quantity">
+    </mat-card-title>
+
+    <mat-card-title>
+        <input matInput type="text" placeholder="Price" [(ngModel)]="price">
+    </mat-card-title>
+  
+    <mat-card-title>
+        <input matInput type="text" placeholder="Discount Price" [(ngModel)]="discountPrice">
+    </mat-card-title>
+  
+    <mat-card-content class="footer">
+        <button mat-stroked-button (click)="bookAction()"><b>Save</b></button>
+    </mat-card-content>
+  </div>
