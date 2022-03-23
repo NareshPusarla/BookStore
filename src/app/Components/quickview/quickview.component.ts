@@ -24,7 +24,6 @@ export class QuickviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.getBookDetail();
-    
     this.bookId = this.route.snapshot.params['id']; 
     console.log("book id", this.bookId);
     this.getFeedback();
@@ -105,8 +104,8 @@ export class QuickviewComponent implements OnInit {
     }
     this.bookservice.addFeedback(this.bookId, data).subscribe((res:any)=>{
       console.log(res);
-      
     })
+    window.location.reload();
   }
 
   getFeedback(){
@@ -115,6 +114,7 @@ export class QuickviewComponent implements OnInit {
       console.log("feedback list",res.result);
       this.feedbackList = res.result;
     })
+    
   }
 
   sendCartQuantity(cartQuantity:any){

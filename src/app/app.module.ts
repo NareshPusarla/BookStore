@@ -17,6 +17,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
 import {NgxPaginationModule} from 'ngx-pagination';
 
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
@@ -28,6 +30,7 @@ import { OrderPlacedComponent } from './Components/order-placed/order-placed.com
 import { ProfileComponent } from './Components/profile/profile.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { AdminBookComponent } from './Components/admin-book/admin-book.component';
+import { AdminBookUpdateComponent } from './Components/admin-book-update/admin-book-update.component';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { AdminBookComponent } from './Components/admin-book/admin-book.component
     OrderPlacedComponent,
     ProfileComponent,
     FilterPipe,
-    AdminBookComponent
+    AdminBookComponent,
+    AdminBookUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +63,8 @@ import { AdminBookComponent } from './Components/admin-book/admin-book.component
     MatSnackBarModule,
     MatIconModule,
     MatSelectModule,
+    MatDialogModule,
+    MatCardModule,
     MatBadgeModule,
     NgxPaginationModule
   ],

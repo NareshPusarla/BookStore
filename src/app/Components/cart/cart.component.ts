@@ -40,26 +40,8 @@ export class CartComponent implements OnInit {
       city: ['', Validators.required],
       state: ['', Validators.required],
     })
-  }
-
-  onSubmit(){
-    this.submitted = true;
-    if (this.customerForm.valid) {
-        console.log("valid data", this.customerForm.value);
-        let data={
-          addressType: "Home",
-          fullAddress: this.customerForm.value.address,
-          city: this.customerForm.value.city,
-          state: this.customerForm.value.state
-        }
-        this.bookService.customerDetails(data).subscribe((response:any)=>{
-          console.log(response);
-          this.snackBar.open('address details saved','dismiss', {duration:3000});
-        }, (error: any) =>{
-          console.log(error);
-        })
-    } else {
-      console.log("Fill the address details");
+    this.route.routeReuseStrategy.shouldReuseRoute = () =>{
+      return false;
     }
   }
 
@@ -123,6 +105,27 @@ export class CartComponent implements OnInit {
     this.show = false;
   }
 
+  onSubmit(){
+    this.submitted = true;
+    if (this.customerForm.valid) {
+        console.log("valid data", this.customerForm.value);
+        let data={
+          addressType: "Home",
+          fullAddress: this.customerForm.value.address,
+          city: this.customerForm.value.city,
+          state: this.customerForm.value.state
+        }
+        this.bookService.customerDetails(data).subscribe((response:any)=>{
+          console.log(response);
+          this.snackBar.open('address details saved','dismiss', {duration:3000});
+        }, (error: any) =>{
+          console.log(error);
+        })
+    } else {
+      console.log("Fill the address details");
+    }
+  }
+
   showOrderDetails(){
     if(this.showSummeryDetails == false && this.customerForm.valid){
       this.showSummeryDetails = true
@@ -132,7 +135,6 @@ export class CartComponent implements OnInit {
   }
 
   ordersummary() {
-
     if(this.cartCount >= 1){
       this.cartBookData.forEach((element: any) => { 
         console.log(element);
@@ -147,7 +149,6 @@ export class CartComponent implements OnInit {
           }
         ]
       }
-
       this.bookService.orderCheckout(data).subscribe((response: any) => {
         console.log(response);
       })
