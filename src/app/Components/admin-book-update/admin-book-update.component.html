@@ -24,6 +24,7 @@
     </mat-card-title>
   
     <mat-card-content class="footer">
-        <button mat-stroked-button (click)="bookAction()"><b>Save</b></button>
+        <button mat-stroked-button (click)="bookAction();" *ngIf="showUpdate && !showAdd"><b>Update Book</b></button>
+        <button mat-stroked-button (click)="bookAction();" *ngIf="showAdd && !showUpdate"><b>Add Book</b></button>
     </mat-card-content>
   </div>

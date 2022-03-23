@@ -1,7 +1,7 @@
 <div>
-    <div>
+    <div class="container">
         <div>
-            <button (click)="addBook()">+ Add Book</button>
+            <button (click)="addBook()" class="btn"><b>Add Book</b></button>
         </div>
         <table>
             <tr>
@@ -9,24 +9,22 @@
               <th>BookImage</th>
               <th>BookName</th>
               <th>Author</th>
-              <th>Description</th>
               <th>Price</th>
               <th>DiscountPrice</th>
               <th>Quantity</th>
               <th>Action</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Image</td>
-              <td>malibu</td>
-              <td>taylor</td>
-              <td>drama</td>
-              <td>Rs.1000</td>
-              <td>Rs.500</td>
-              <td>10</td>
+            <tr *ngFor="let book of allBooks; let i = index">
+              <td>{{i+1}}</td>
+              <td><img src="../../../assets/Image 11.png" alt=""></td>
+              <td>{{book.bookName}}</td>
+              <td>{{book.author}}</td>
+              <td>{{book.price}}</td>
+              <td>{{book.discountPrice}}</td>
+              <td>{{book.quantity}}</td>
               <td class="action">
-                  <span>Update</span>
-                  <span>Delete</span>
+                  <span style="color: green; font-size: 18px;" (click)="openDialog(book)"><b>Update</b></span>
+                  <span style="color: red; font-size: 18px;" (click)="deleteBook(book)"><b>Delete</b></span>
               </td>
             </tr>
             

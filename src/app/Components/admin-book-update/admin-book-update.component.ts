@@ -16,7 +16,9 @@ export class AdminBookUpdateComponent implements OnInit {
   quantity:any
   price:any;
   discountPrice:any;
-  id:any;
+  
+  showUpdate:boolean = true;
+  showAdd:boolean = false;
 
   constructor(private bookService:BookserviceService, public dialogRef: MatDialogRef<AdminBookUpdateComponent>, 
     @Inject(MAT_DIALOG_DATA) public book: any, private snackBar: MatSnackBar) { 
@@ -54,6 +56,7 @@ export class AdminBookUpdateComponent implements OnInit {
         console.log(error);
       })
       this.dialogRef.close();
+      
     } else{
       this.bookService.updateAdminBook(this.book._id, data).subscribe((response:any)=>{
         console.log("updated notes", response);
@@ -66,4 +69,12 @@ export class AdminBookUpdateComponent implements OnInit {
     }
   }
 
+  // changeButton(){
+  //   if(this.showUpdate){
+  //     this.showUpdate = !this.showUpdate
+  //     this.showAdd = !this.showAdd
+  //   } else{
+
+  //   }
+  // }
 }
