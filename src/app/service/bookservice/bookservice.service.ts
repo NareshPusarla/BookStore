@@ -72,12 +72,12 @@ export class BookserviceService {
     return this.httpService.postData('bookstore_user/admin/add/book', data, true, this.header)
   }
 
-  updateAdminBook(data:any, id:any){
+  updateAdminBook(id:any, data:any){
     return this.httpService.putData('bookstore_user/admin/update/book/'+id, data, true, this.header)
   }
 
   deleteAdminBook(id:any){
-    return this.httpService.deleteData('bookstore_user/admin/update/book/'+id, {}, true, this.header)
+    return this.httpService.deleteData('bookstore_user/admin/delete/book/'+id, {}, true, this.header)
   }
 }
 
