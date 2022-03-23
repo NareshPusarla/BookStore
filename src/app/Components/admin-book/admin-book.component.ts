@@ -51,6 +51,7 @@ export class AdminBookComponent implements OnInit {
       this.quantity = result;
       this.price = result;
       this.discountPrice = result;
+    
     });
   }
 

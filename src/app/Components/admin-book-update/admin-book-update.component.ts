@@ -56,7 +56,7 @@ export class AdminBookUpdateComponent implements OnInit {
         console.log(error);
       })
       this.dialogRef.close();
-      
+
     } else{
       this.bookService.updateAdminBook(this.book._id, data).subscribe((response:any)=>{
         console.log("updated notes", response);
@@ -69,12 +69,12 @@ export class AdminBookUpdateComponent implements OnInit {
     }
   }
 
-  // changeButton(){
-  //   if(this.showUpdate){
-  //     this.showUpdate = !this.showUpdate
-  //     this.showAdd = !this.showAdd
-  //   } else{
+  change(){
+    if(this.showUpdate){
+      this.showAdd = false;
+    }else{
+      this.showAdd = true;
+    }
+  }
 
-  //   }
-  // }
 }
