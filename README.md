@@ -85,4 +85,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - Here we provided logout option also for user.
 -![This is image]("../assets/reference/profile.png")
 
-
+## Admin:
+- To our web application we gave a seperate register and login option as an admin.
+- Here we can use same username with different accessing password to login as an admin.
+- After sign in as an admin, we gave some admin options like adding, updating, deleting for a book.
+- On click of add book, a dialog box will be opened to enter the book details to add.
+- On click of update book, a dialog box will be opened to with the existing book details to update.
+- On click of delete book, as per the book id the particular book will be deleted forever.
+-![This is image]("../assets/reference/adminHome.png")
+-![This is image]("../assets/reference/adminAdd.png")
+-![This is image]("../assets/reference/adminUpdate.png")
