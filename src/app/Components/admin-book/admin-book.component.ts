@@ -46,7 +46,7 @@ export class AdminBookComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.bookName = result;
-      this.bookName = result;
+      this.author = result;
       this.description = result;
       this.quantity = result;
       this.price = result;
@@ -65,7 +65,7 @@ export class AdminBookComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.bookName = result;
-      this.bookName = result;
+      this.author = result;
       this.description = result;
       this.quantity = result;
       this.price = result;

@@ -34,6 +34,12 @@ export class AdminBookUpdateComponent implements OnInit {
     this.discountPrice = this.book.discountPrice;
 
     console.log("hi this is notes", this.book);
+    
+    this.showUpdate = this.book.action;
+    // console.log("action", this.book.action, this.showUpdate);
+    
+    this.showAdd = this.book.action;
+    // console.log("action", this.book.action, this.showAdd);
   }
 
   bookAction(){
@@ -58,6 +64,7 @@ export class AdminBookUpdateComponent implements OnInit {
       this.dialogRef.close();
 
     } else{
+      console.log("id", this.book._id);
       this.bookService.updateAdminBook(this.book._id, data).subscribe((response:any)=>{
         console.log("updated notes", response);
         this.snackBar.open("notes updated successfully", "dismiss", {duration:3000});
@@ -66,14 +73,6 @@ export class AdminBookUpdateComponent implements OnInit {
         console.log(error);
       })
       this.dialogRef.close();
-    }
-  }
-
-  change(){
-    if(this.showUpdate){
-      this.showAdd = false;
-    }else{
-      this.showAdd = true;
     }
   }
 
